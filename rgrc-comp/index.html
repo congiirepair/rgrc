@@ -4341,8 +4341,13 @@
     .website-admin-banner-preview img {
       display: block;
       width: 100%;
+      height: auto;
       aspect-ratio: 21 / 9;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.22), rgba(255,255,255,0.08)),
+        rgba(12, 16, 22, 0.82);
     }
 
     .website-admin-banner-empty {
@@ -5953,9 +5958,13 @@
     .landing-upcoming-banner-media {
       display: block;
       width: 100%;
+      height: auto;
       aspect-ratio: 21 / 9;
-      object-fit: cover;
-      background: rgba(255,255,255,0.08);
+      object-fit: contain;
+      object-position: center;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,0.18), rgba(255,255,255,0.06)),
+        rgba(12, 16, 22, 0.78);
     }
 
     .landing-upcoming-banner-meta {
