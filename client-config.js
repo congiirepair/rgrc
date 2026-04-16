@@ -116,8 +116,15 @@ window.RC_DRIFT_CLIENT_CONFIG = {
     }
   },
   "firebase": {
-    "appId": "",
-    "config": null,
+    "appId": "1:90778458671:web:23fccd26df247559f084da",
+    "config": {
+      "projectId": "rgrc-f9d56",
+      "appId": "1:90778458671:web:23fccd26df247559f084da",
+      "storageBucket": "rgrc-f9d56.firebasestorage.app",
+      "apiKey": "AIzaSyACfDge2lrj_R6xZxHMZcO39IBztJ6Gwns",
+      "authDomain": "rgrc-f9d56.firebaseapp.com",
+      "messagingSenderId": "90778458671"
+    },
     "spectatorAliases": []
   },
   "security": {
