@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RCDriftSync Brand Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./brand-studio.css" />
+</head>
+<body>
+  <div class="studio-shell">
+    <header class="studio-hero">
+      <p class="studio-eyebrow">White-Label Tooling</p>
+      <h1>Brand Studio</h1>
+      <p class="studio-copy">Generate a ready-to-use <code>client-config.js</code> for new tracks by changing branding, theme colors, domains, and Firebase settings without touching the event logic.</p>
+      <div class="studio-actions">
+        <button id="loadTemplateBtn" class="studio-button studio-button-primary" type="button">Load Template Starter</button>
+        <button id="loadCurrentBtn" class="studio-button" type="button">Load Current Config</button>
+        <button id="clearDraftBtn" class="studio-button studio-button-ghost" type="button">Clear Saved Draft</button>
+      </div>
+    </header>
+
+    <main class="studio-layout">
+      <section class="studio-panel studio-form-panel">
+        <div class="studio-panel-head">
+          <p class="studio-eyebrow">Config Builder</p>
+          <h2>Client Inputs</h2>
+        </div>
+        <form id="brandStudioForm" class="studio-form">
+          <div id="formSections" class="studio-form-sections"></div>
+        </form>
+      </section>
+
+      <aside class="studio-sidebar">
+        <section class="studio-panel">
+          <div class="studio-panel-head">
+            <p class="studio-eyebrow">Live Preview</p>
+            <h2>Brand Snapshot</h2>
+          </div>
+          <article id="previewCard" class="preview-card">
+            <div class="preview-topline">
+              <span>Preview</span>
+              <span id="previewVenuePill" class="preview-pill">Venue</span>
+            </div>
+            <div class="preview-logo">
+              <img id="previewLogoImage" alt="Preview logo" hidden />
+              <span id="previewWordmark" class="preview-wordmark">Your Track Sync</span>
+            </div>
+            <div class="preview-copy">
+              <strong id="previewTitle">Your Track Sync</strong>
+              <span id="previewText">Update the fields on the left to generate the client config for the next track.</span>
+            </div>
+            <div class="preview-actions">
+              <span class="preview-button preview-button-primary">Register</span>
+              <span class="preview-button">Standings</span>
+              <span class="preview-button">Results</span>
+            </div>
+          </article>
+          <div class="theme-swatches">
+            <div class="theme-swatch-group">
+              <span>Light</span>
+              <div class="theme-swatch-row">
+                <i id="lightAccentSwatch"></i>
+                <i id="lightAccentDarkSwatch"></i>
+                <i id="lightAccentCyanSwatch"></i>
+                <i id="lightAccentGreenSwatch"></i>
+              </div>
+            </div>
+            <div class="theme-swatch-group">
+              <span>Dark</span>
+              <div class="theme-swatch-row">
+                <i id="darkAccentSwatch"></i>
+                <i id="darkAccentDarkSwatch"></i>
+                <i id="darkAccentCyanSwatch"></i>
+                <i id="darkAccentGreenSwatch"></i>
+              </div>
+            </div>
+          </div>
+          <div class="route-preview-wrap">
+            <p class="studio-eyebrow">Routes</p>
+            <div id="routePreview" class="route-preview"></div>
+          </div>
+        </section>
+
+        <section class="studio-panel">
+          <div class="studio-panel-head">
+            <p class="studio-eyebrow">Generated File</p>
+            <h2>client-config.js</h2>
+          </div>
+          <div class="studio-actions studio-actions-stack">
+            <button id="copyConfigBtn" class="studio-button studio-button-primary" type="button">Copy Config</button>
+            <button id="downloadConfigBtn" class="studio-button" type="button">Download Config</button>
+            <a class="studio-button studio-button-ghost" href="./NEW_CLIENT_SETUP.md" target="_blank" rel="noopener noreferrer">Open Setup Guide</a>
+          </div>
+          <textarea id="outputConfig" class="output-code" readonly spellcheck="false"></textarea>
+          <div id="studioStatus" class="studio-status"></div>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="./client-config.template.js"></script>
+  <script>
+    window.RC_DRIFT_TEMPLATE_PRESET = JSON.parse(JSON.stringify(window.RC_DRIFT_CLIENT_CONFIG || {}));
+  </script>
+  <script src="../client-config.js"></script>
+  <script>
+    window.RC_DRIFT_CURRENT_PRESET = JSON.parse(JSON.stringify(window.RC_DRIFT_CLIENT_CONFIG || window.RC_DRIFT_TEMPLATE_PRESET || {}));
+  </script>
+  <script src="./brand-studio.js"></script>
+</body>
+</html>
