@@ -5942,35 +5942,33 @@
 
     .landing-upcoming-banner-card {
       position: relative;
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.42);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.52), rgba(255,255,255,0.18)),
-        linear-gradient(135deg, rgba(255,255,255,0.24), rgba(255,255,255,0.08));
-      box-shadow:
-        0 16px 28px rgba(18, 28, 40, 0.1),
-        inset 0 1px 0 rgba(255,255,255,0.76);
-      backdrop-filter: blur(18px) saturate(1.12);
-      -webkit-backdrop-filter: blur(18px) saturate(1.12);
+      display: block;
+      width: 100%;
+      max-width: min(1180px, 100%);
+      margin: 0 auto;
+      overflow: visible;
+      border-radius: 0;
+      border: none;
+      background: none;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
 
     .landing-upcoming-banner-media {
       display: block;
       width: 100%;
+      max-width: 100%;
       height: auto;
-      aspect-ratio: 21 / 9;
-      object-fit: contain;
+      aspect-ratio: auto;
+      object-fit: fill;
       object-position: center;
-      background:
-        radial-gradient(circle at center, rgba(255,255,255,0.18), rgba(255,255,255,0.06)),
-        rgba(12, 16, 22, 0.78);
+      background: none;
+      border-radius: 0;
     }
 
     .landing-upcoming-banner-meta {
-      display: grid;
-      gap: 4px;
-      padding: 14px 16px 16px;
+      display: none;
     }
 
     .landing-upcoming-banner-meta strong {
@@ -6093,13 +6091,9 @@
     }
 
     body[data-theme="dark"] .landing-upcoming-banner-card {
-      border-color: rgba(255,255,255,0.18);
-      background:
-        linear-gradient(180deg, rgba(28, 34, 46, 0.46), rgba(12, 16, 24, 0.58)),
-        linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03));
-      box-shadow:
-        0 18px 30px rgba(0, 0, 0, 0.24),
-        inset 0 1px 0 rgba(255,255,255,0.16);
+      border: none;
+      background: none;
+      box-shadow: none;
     }
 
     .hidden { display: none !important; }
@@ -17392,10 +17386,6 @@
           ? `
             <article class="landing-upcoming-banner-card">
               <img class="landing-upcoming-banner-media" src="${escapeAttributeValue(upcomingBannerSource)}" alt="${escapeAttributeValue(nextEvent?.name || "Upcoming event banner")}" />
-              <div class="landing-upcoming-banner-meta">
-                <strong>${escapeHtml(nextEvent.name || "Untitled Event")}</strong>
-                <small>${escapeHtml(formatEventDate(nextEvent.date))}</small>
-              </div>
             </article>
           `
           : `<div class="empty-state">Website Admin can upload an Upcoming Event banner for ${escapeHtml(nextEvent.name || "the next event")} and it will appear here automatically.</div>`
