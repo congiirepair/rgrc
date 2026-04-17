@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RC Drift Competition Control</title>
+  <title>RGRC Sync</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     @font-face {
       font-family: 'Ethnocentric';
@@ -16,28 +16,36 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: 'Cream Cake Bold';
+      src: url('./assets/user/display-font-nevera-regular-1776352710870.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
-      --bg: #080b12;
-      --panel: rgba(13, 16, 24, 0.86);
-      --panel-strong: rgba(19, 23, 34, 0.94);
-      --panel-soft: rgba(255, 255, 255, 0.06);
-      --text: #f6f8fc;
-      --text-soft: #9ca7bc;
-      --line: rgba(255, 255, 255, 0.16);
-      --line-strong: rgba(255, 255, 255, 0.34);
-      --accent: #ff4f9f;
-      --accent-dark: #a931ff;
-      --button-accent: #ff4f9f;
-      --button-accent-dark: #a931ff;
-      --accent-cyan: #35f2d0;
-      --accent-green: #2ad16b;
-      --accent-green-dark: #0d6f3c;
-      --panel-highlight: #2ad16b;
-      --accent-warm: #ffb343;
-      --accent-glow: 0 0 0 1px rgba(255, 79, 159, 0.36), 0 0 24px rgba(255, 79, 159, 0.20), 0 0 52px rgba(53, 242, 208, 0.12);
-      --button-glow: 0 0 0 1px rgba(255, 79, 159, 0.36), 0 0 24px rgba(255, 79, 159, 0.20), 0 0 52px rgba(169, 49, 255, 0.12);
-      --accent-green-glow: 0 0 0 1px rgba(42, 209, 107, 0.32), 0 0 18px rgba(42, 209, 107, 0.18);
-      --bracket-advance-glow: 0 0 0 1px rgba(120, 255, 172, 0.94), 0 0 16px rgba(120, 255, 172, 0.74), 0 0 34px rgba(42, 209, 107, 0.5), 0 16px 28px rgba(0, 0, 0, 0.24);
+      --bg: #090705;
+      --panel: rgba(18, 13, 10, 0.86);
+      --panel-strong: rgba(26, 20, 16, 0.94);
+      --panel-soft: rgba(255, 246, 236, 0.06);
+      --text: #f5eee6;
+      --text-soft: #b9ab9b;
+      --line: rgba(255, 244, 232, 0.15);
+      --line-strong: rgba(255, 244, 232, 0.30);
+      --accent: #d0a06b;
+      --accent-dark: #6f553c;
+      --button-accent: #b88a59;
+      --button-accent-dark: #5c4735;
+      --accent-cyan: #87a6b2;
+      --accent-green: #8fa083;
+      --accent-green-dark: #5b684f;
+      --panel-highlight: #d3a36d;
+      --accent-warm: #f3d3aa;
+      --accent-glow: 0 0 0 1px rgba(208, 160, 107, 0.34), 0 0 24px rgba(208, 160, 107, 0.18), 0 0 52px rgba(135, 166, 178, 0.10);
+      --button-glow: 0 0 0 1px rgba(184, 138, 89, 0.34), 0 0 24px rgba(184, 138, 89, 0.18), 0 0 52px rgba(92, 71, 53, 0.12);
+      --accent-green-glow: 0 0 0 1px rgba(143, 160, 131, 0.32), 0 0 18px rgba(143, 160, 131, 0.16);
+      --bracket-advance-glow: 0 0 0 1px rgba(211, 163, 109, 0.88), 0 0 16px rgba(211, 163, 109, 0.54), 0 0 34px rgba(143, 160, 131, 0.38), 0 16px 28px rgba(0, 0, 0, 0.24);
       --panel-shadow: 0 28px 72px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255,255,255,0.05);
       --card-shadow: 0 18px 42px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255,255,255,0.04);
       --button-shadow: 0 16px 28px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255,255,255,0.08);
@@ -58,22 +66,22 @@
       --radius-panel: 24px;
       --radius-card: 18px;
       --radius-button: 14px;
-      --brand-track-background-image: url("./assets/template-track-background.png");
-      --brand-watermark-image: url("./assets/rcdriftsync-logo-transparent.png");
-      --font-graffiti: 'Ethnocentric', 'Orbitron', 'Inter', sans-serif;
-      --font-sans: 'Inter', sans-serif;
-      --brand-home-hero-image: url("./assets/template-track-background.png");
-      --accent-rgb: 255, 79, 159;
-      --button-accent-rgb: 255, 79, 159;
-      --button-accent-dark-rgb: 169, 49, 255;
-      --accent-cyan-rgb: 53, 242, 208;
-      --accent-green-rgb: 42, 209, 107;
-      --panel-highlight-rgb: 42, 209, 107;
-      --panel-highlight-band: linear-gradient(90deg, rgba(42, 209, 107, 0.74), rgba(42, 209, 107, 0.96) 36%, rgba(196, 255, 220, 0.92) 62%, rgba(42, 209, 107, 0.74) 100%);
-      --panel-highlight-shadow: 0 0 18px rgba(42, 209, 107, 0.14);
-      --landing-wordmark-color: #1b2127;
+      --brand-track-background-image: url("./assets/rgrcfront.png");
+      --brand-watermark-image: url("./assets/user/logoinverted-logo-1-1776352989748.png");
+      --font-graffiti: 'Cream Cake Bold', 'Ethnocentric', 'Orbitron', 'Inter', sans-serif;
+      --font-sans: 'Roboto', 'Inter', sans-serif;
+      --brand-home-hero-image: url("./assets/rgrcfront.png");
+      --accent-rgb: 44, 36, 29;
+      --button-accent-rgb: 43, 36, 29;
+      --button-accent-dark-rgb: 122, 99, 75;
+      --accent-cyan-rgb: 110, 135, 146;
+      --accent-green-rgb: 111, 125, 98;
+      --panel-highlight-rgb: 180, 139, 90;
+      --panel-highlight-band: linear-gradient(90deg, rgba(180, 139, 90, 0.72), rgba(180, 139, 90, 0.96) 36%, rgba(255, 240, 219, 0.92) 62%, rgba(180, 139, 90, 0.72) 100%);
+      --panel-highlight-shadow: 0 0 18px rgba(180, 139, 90, 0.14);
+      --landing-wordmark-color: #17130f;
       --brand-logo-filter-light: none;
-      --brand-logo-filter-dark: none;
+      --brand-logo-filter-dark: invert(1);
     }
 
     * { box-sizing: border-box; }
@@ -86,7 +94,7 @@
       color: var(--text);
       background-color: var(--bg);
       background-image:
-        linear-gradient(180deg, rgba(6, 8, 13, 0.78), rgba(4, 6, 12, 0.93)),
+        linear-gradient(180deg, rgba(17, 13, 10, 0.76), rgba(9, 7, 5, 0.92)),
         radial-gradient(circle at 16% 12%, rgba(var(--accent-rgb), 0.18), transparent 24%),
         radial-gradient(circle at 82% 18%, rgba(var(--accent-cyan-rgb), 0.14), transparent 26%),
         linear-gradient(135deg, rgba(255,255,255,0.035), transparent 34%),
@@ -102,23 +110,23 @@
       --bg: #f4f1eb;
       --panel: rgba(255, 252, 248, 0.9);
       --panel-strong: rgba(255, 255, 255, 0.96);
-      --panel-soft: rgba(20, 24, 34, 0.05);
-      --text: #161c28;
-      --text-soft: #6f788d;
-      --line: rgba(28, 33, 46, 0.12);
-      --line-strong: rgba(28, 33, 46, 0.22);
-      --accent: #f446a6;
-      --accent-dark: #7f43ff;
-      --button-accent: #f446a6;
-      --button-accent-dark: #7f43ff;
-      --accent-cyan: #19bfae;
-      --accent-green: #1fb95f;
-      --accent-green-dark: #0e6a3c;
-      --panel-highlight: #1fb95f;
-      --accent-warm: #ffaf42;
-      --accent-glow: 0 0 0 1px rgba(244, 70, 166, 0.24), 0 12px 28px rgba(127, 67, 255, 0.18);
-      --button-glow: 0 0 0 1px rgba(244, 70, 166, 0.24), 0 12px 28px rgba(127, 67, 255, 0.18);
-      --accent-green-glow: 0 0 0 1px rgba(31, 185, 95, 0.24), 0 10px 22px rgba(31, 185, 95, 0.16);
+      --panel-soft: rgba(35, 27, 21, 0.05);
+      --text: #221914;
+      --text-soft: #726559;
+      --line: rgba(59, 46, 36, 0.12);
+      --line-strong: rgba(59, 46, 36, 0.22);
+      --accent: #2c241d;
+      --accent-dark: #8a7358;
+      --button-accent: #2b241d;
+      --button-accent-dark: #7a634b;
+      --accent-cyan: #6e8792;
+      --accent-green: #6f7d62;
+      --accent-green-dark: #4d5847;
+      --panel-highlight: #b48b5a;
+      --accent-warm: #d3a36d;
+      --accent-glow: 0 0 0 1px rgba(44, 36, 29, 0.22), 0 12px 28px rgba(122, 99, 75, 0.16);
+      --button-glow: 0 0 0 1px rgba(43, 36, 29, 0.22), 0 12px 28px rgba(122, 99, 75, 0.18);
+      --accent-green-glow: 0 0 0 1px rgba(111, 125, 98, 0.24), 0 10px 22px rgba(111, 125, 98, 0.16);
       --panel-shadow: 0 22px 48px rgba(22, 29, 43, 0.14), inset 0 1px 0 rgba(255,255,255,0.72);
       --card-shadow: 0 16px 36px rgba(22, 29, 43, 0.12), inset 0 1px 0 rgba(255,255,255,0.68);
       --button-shadow: 0 14px 28px rgba(22, 29, 43, 0.12), inset 0 1px 0 rgba(255,255,255,0.72);
@@ -135,31 +143,31 @@
     }
 
     body[data-theme="dark"] {
-      --bg: #05070d;
-      --panel: rgba(10, 12, 20, 0.90);
-      --panel-strong: rgba(16, 19, 29, 0.96);
-      --panel-soft: rgba(255, 255, 255, 0.05);
-      --text: #f7f9ff;
-      --text-soft: #a1abc0;
-      --line: rgba(255, 255, 255, 0.16);
-      --line-strong: rgba(255, 255, 255, 0.34);
-      --accent: #ff4f9f;
-      --accent-dark: #9b38ff;
-      --button-accent: #ff4f9f;
-      --button-accent-dark: #9b38ff;
-      --accent-cyan: #37e8d0;
-      --accent-green: #27d56c;
-      --accent-green-dark: #0d6b3c;
-      --panel-highlight: #27d56c;
-      --accent-warm: #ffb343;
-      --button-glow: 0 0 0 1px rgba(255, 79, 159, 0.36), 0 0 24px rgba(255, 79, 159, 0.20), 0 0 52px rgba(155, 56, 255, 0.12);
-      --accent-green-glow: 0 0 0 1px rgba(39, 213, 108, 0.34), 0 0 20px rgba(39, 213, 108, 0.18);
+      --bg: #090705;
+      --panel: rgba(17, 13, 10, 0.90);
+      --panel-strong: rgba(25, 19, 15, 0.96);
+      --panel-soft: rgba(255, 247, 238, 0.05);
+      --text: #f5eee6;
+      --text-soft: #b9ab9b;
+      --line: rgba(255, 244, 232, 0.15);
+      --line-strong: rgba(255, 244, 232, 0.30);
+      --accent: #d0a06b;
+      --accent-dark: #6f553c;
+      --button-accent: #b88a59;
+      --button-accent-dark: #5c4735;
+      --accent-cyan: #87a6b2;
+      --accent-green: #8fa083;
+      --accent-green-dark: #5b684f;
+      --panel-highlight: #d3a36d;
+      --accent-warm: #f3d3aa;
+      --button-glow: 0 0 0 1px rgba(184, 138, 89, 0.34), 0 0 24px rgba(184, 138, 89, 0.18), 0 0 52px rgba(92, 71, 53, 0.12);
+      --accent-green-glow: 0 0 0 1px rgba(143, 160, 131, 0.34), 0 0 20px rgba(143, 160, 131, 0.18);
       --panel-shadow: 0 32px 78px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.05);
       --card-shadow: 0 20px 44px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.04);
       --button-shadow: 0 16px 30px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255,255,255,0.08);
       background-color: var(--bg);
       background-image:
-        linear-gradient(180deg, rgba(6, 8, 13, 0.68), rgba(4, 6, 12, 0.92)),
+        linear-gradient(180deg, rgba(17, 13, 10, 0.68), rgba(9, 7, 5, 0.92)),
         radial-gradient(circle at 16% 12%, rgba(var(--accent-rgb), 0.16), transparent 24%),
         radial-gradient(circle at 82% 18%, rgba(var(--accent-cyan-rgb), 0.12), transparent 26%),
         linear-gradient(135deg, rgba(255,255,255,0.035), transparent 34%),
@@ -2084,17 +2092,33 @@
       margin-inline: auto;
     }
 
-    #view-home > .hero .eyebrow,
-    #view-home > .hero #landingHeroTitle {
-      display: none;
-    }
-
     #view-home > .hero .public-event-actions {
-      width: min(620px, 100%);
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      width: min(560px, 100%);
+      grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 1fr));
       justify-content: center;
       align-self: center;
       margin-inline: auto;
+    }
+
+    #view-home > .hero .hero-logo-shell {
+      width: min(380px, 100%);
+      max-width: min(380px, 100%);
+      margin: 0 auto 12px;
+    }
+
+    #view-home > .hero .hero-logo {
+      width: min(380px, 100%);
+    }
+
+    #view-home > .hero #landingHeroTitle {
+      margin: 0;
+    }
+
+    #view-home > .hero #landingHeroCopy {
+      max-width: 46ch;
+      margin-inline: auto;
+      font-size: clamp(1rem, 1.55vw, 1.14rem);
+      line-height: 1.62;
     }
 
     #view-home > .hero .public-event-actions .button {
@@ -2163,15 +2187,16 @@
 
     #view-home > .hero {
       background:
-        linear-gradient(180deg, rgba(248, 246, 241, 0.78), rgba(241, 237, 230, 0.86)),
-        linear-gradient(135deg, rgba(255,255,255,0.56), rgba(255,255,255,0.2) 46%, rgba(255,255,255,0.08)),
+        linear-gradient(180deg, rgba(248, 244, 236, 0.56), rgba(236, 230, 220, 0.78)),
+        radial-gradient(circle at 50% 18%, rgba(211, 163, 109, 0.18), transparent 30%),
+        linear-gradient(135deg, rgba(255,255,255,0.42), rgba(255,255,255,0.12) 52%, rgba(255,255,255,0.03)),
         var(--brand-home-hero-image) center center / cover no-repeat;
     }
 
     #view-home > .hero::before {
       background:
-        linear-gradient(120deg, rgba(255,255,255,0.24), transparent 44%),
-        radial-gradient(circle at center, rgba(255,255,255,0.4), rgba(255,255,255,0.12) 44%, transparent 76%);
+        linear-gradient(120deg, rgba(255,255,255,0.18), transparent 42%),
+        radial-gradient(circle at center, rgba(255,255,255,0.18), rgba(255,255,255,0.06) 42%, transparent 76%);
       opacity: 0.9;
     }
 
@@ -2187,16 +2212,19 @@
 
     .landing-brand-wordmark {
       display: block;
-      width: min(760px, 100%);
+      width: min(12ch, 100%);
       max-width: 100%;
-      font-family: "Orbitron", "Eurostile", "Arial Black", sans-serif;
-      font-size: clamp(2.6rem, 7vw, 5.8rem);
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      line-height: 0.94;
-      text-transform: uppercase;
+      margin-inline: auto;
+      font-family: var(--font-graffiti);
+      font-size: clamp(2.8rem, 6.6vw, 5.4rem);
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      line-height: 0.92;
+      text-transform: none;
       color: var(--landing-wordmark-color);
-      white-space: nowrap;
+      white-space: normal;
+      text-wrap: balance;
+      text-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
     }
 
     body[data-theme="dark"] .landing-brand-logo {
@@ -2209,30 +2237,17 @@
 
     body[data-theme="dark"] #view-home > .hero {
       background:
-        linear-gradient(180deg, rgba(16, 20, 28, 0.68), rgba(10, 14, 20, 0.8)),
-        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03) 48%, rgba(255,255,255,0.01)),
+        linear-gradient(180deg, rgba(10, 12, 16, 0.46), rgba(12, 14, 18, 0.74)),
+        radial-gradient(circle at 50% 18%, rgba(243, 211, 170, 0.16), transparent 30%),
+        linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015) 52%, rgba(0,0,0,0.08)),
         var(--brand-home-hero-image) center center / cover no-repeat;
     }
 
     body[data-theme="dark"] #view-home > .hero::before {
       background:
-        linear-gradient(120deg, rgba(255,255,255,0.08), transparent 44%),
-        radial-gradient(circle at center, rgba(255,255,255,0.1), rgba(255,255,255,0.04) 42%, transparent 74%);
-      opacity: 0.82;
-    }
-
-    body[data-theme="dark"] #view-home > .hero {
-      background:
-        linear-gradient(180deg, rgba(16, 20, 28, 0.68), rgba(10, 14, 20, 0.8)),
-        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03) 48%, rgba(255,255,255,0.01)),
-        var(--brand-home-hero-image) center center / cover no-repeat;
-    }
-
-    body[data-theme="dark"] #view-home > .hero::before {
-      background:
-        linear-gradient(120deg, rgba(255,255,255,0.08), transparent 44%),
-        radial-gradient(circle at center, rgba(255,255,255,0.1), rgba(255,255,255,0.04) 42%, transparent 74%);
-      opacity: 0.82;
+        linear-gradient(120deg, rgba(255,255,255,0.06), transparent 42%),
+        radial-gradient(circle at center, rgba(243, 211, 170, 0.1), rgba(255,255,255,0.02) 42%, transparent 74%);
+      opacity: 0.84;
     }
 
     body[data-theme="dark"] .hero,
@@ -5961,7 +5976,7 @@
       max-width: 100%;
       height: auto;
       aspect-ratio: auto;
-      object-fit: fill;
+      object-fit: cover;
       object-position: center;
       background: none;
       border-radius: 0;
@@ -8662,7 +8677,7 @@
     <div id="view-registration" class="view-section is-active">
       <header class="hero">
         <div class="hero-copy-block">
-        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/rcdriftsync-logo-transparent.png" alt="RC Drift Sync logo" /></div>
+        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/user/logoprimary-logo-1-1776354367735.png" alt="Rolling Garage RC logo" /></div>
           <p class="eyebrow">Registration</p>
           <h1>Driver Sign-Up</h1>
           <div class="hero-actions">
@@ -8710,20 +8725,41 @@
               <h2>Register Driver</h2>
             </div>
           </div>
-          <div class="registration-intro">Submit one driver at a time. After each submit, a fresh form appears automatically for the next registration number.</div>
+          <div class="registration-intro" id="registrationEntryIntro">Submit one driver at a time. After each submit, a fresh form appears automatically for the next registration number.</div>
           <form id="registrationEntryForm" class="registration-draft-form">
             <div class="registration-form-grid single-column">
+              <label class="modal-field">
+                <span>Team</span>
+                <input id="registrationDraftTeam" class="registration-driver-input" type="text" placeholder="Team name" />
+              </label>
+            </div>
+            <div id="registrationModeNote" class="registration-form-note">Team names are optional for solo driver events.</div>
+            <div id="registrationSoloFields" class="registration-form-grid single-column">
               <label class="modal-field">
                 <span>Driver Name</span>
                 <input id="registrationDraftName" class="registration-driver-input" type="text" placeholder="Driver name" />
               </label>
               <label class="modal-field">
-                <span>Team</span>
-                <input id="registrationDraftTeam" class="registration-driver-input" type="text" placeholder="Team name" />
-              </label>
-              <label class="modal-field">
                 <span>Chassis</span>
                 <input id="registrationDraftChassis" class="registration-driver-input" type="text" placeholder="Chassis" />
+              </label>
+            </div>
+            <div id="registrationTeamFields" class="registration-form-grid single-column" hidden>
+              <label class="modal-field">
+                <span>Driver 2</span>
+                <input id="registrationDraftName2" class="registration-driver-input" type="text" placeholder="Second driver name" />
+              </label>
+              <label class="modal-field">
+                <span>Driver 2 Chassis</span>
+                <input id="registrationDraftChassis2" class="registration-driver-input" type="text" placeholder="Second driver chassis" />
+              </label>
+              <label class="modal-field">
+                <span>Driver 3 (Optional)</span>
+                <input id="registrationDraftName3" class="registration-driver-input" type="text" placeholder="Third driver name" />
+              </label>
+              <label class="modal-field">
+                <span>Driver 3 Chassis</span>
+                <input id="registrationDraftChassis3" class="registration-driver-input" type="text" placeholder="Third driver chassis" />
               </label>
             </div>
             <div class="registration-form-actions">
@@ -8731,75 +8767,6 @@
               <button id="registrationAddDriverSecondaryBtn" class="button button-secondary" type="submit">Submit Driver</button>
             </div>
           </form>
-          <section class="admin-register-only" style="margin-top: 18px;">
-            <div class="panel-header">
-              <div>
-                <p class="section-kicker">Self-Registration Geofence</p>
-                <h2>Venue Check-In Settings</h2>
-              </div>
-            </div>
-            <div class="self-register-note">Drivers on the public Register page can only submit after their phone is confirmed inside this event radius.</div>
-            <div class="venue-profile-bar">
-              <div class="venue-config-grid">
-                <label class="modal-field">
-                  <span>Saved Venue Profiles</span>
-                  <select id="venueProfileSelect">
-                    <option value="">No saved venue profiles</option>
-                  </select>
-                </label>
-                <label class="modal-field">
-                  <span>Profile Name</span>
-                  <input id="venueProfileNameInput" type="text" placeholder="Portland Track Layout" />
-                </label>
-              </div>
-              <div class="venue-profile-actions">
-                <button id="newVenueProfileBtn" class="button button-secondary" type="button">New Profile</button>
-                <button id="saveVenueProfileBtn" class="button button-secondary" type="button">Save Profile</button>
-                <button id="deleteVenueProfileBtn" class="button button-secondary" type="button">Delete Profile</button>
-              </div>
-            </div>
-            <div class="venue-config-grid" style="margin-top: 14px;">
-              <label class="modal-field">
-                <span>Enable Self-Registration</span>
-                <select id="venueEnabledSelect">
-                  <option value="false">Disabled</option>
-                  <option value="true">Enabled</option>
-                </select>
-              </label>
-              <label class="modal-field">
-                <span>Venue Label</span>
-                <input id="venueLabelInput" type="text" placeholder="Your Drift Arena" />
-              </label>
-              <label class="modal-field" style="grid-column: 1 / -1;">
-                <span>Paste Maps Link Or Coordinates</span>
-                <div class="venue-paste-row">
-                  <input id="venueLocationPasteInput" type="text" placeholder="Paste Google Maps, Apple Maps, or 45.523064, -122.676483" />
-                  <button id="applyVenueLocationPasteBtn" class="button button-secondary" type="button">Use Pasted Location</button>
-                </div>
-                <div class="helper-text">Supports map share links and raw latitude/longitude pairs. Paste, apply, then save venue settings.</div>
-              </label>
-              <label class="modal-field">
-                <span>Latitude</span>
-                <input id="venueLatitudeInput" type="number" step="any" placeholder="33.000000" />
-              </label>
-              <label class="modal-field">
-                <span>Longitude</span>
-                <input id="venueLongitudeInput" type="number" step="any" placeholder="-117.000000" />
-              </label>
-              <label class="modal-field">
-                <span>Radius (meters)</span>
-                <input id="venueRadiusInput" type="number" min="25" step="1" placeholder="150" />
-              </label>
-              <label class="modal-field">
-                <span>Auto-Close Time</span>
-                <input id="venueCloseAtInput" type="datetime-local" />
-              </label>
-            </div>
-            <div class="registration-form-actions" style="margin-top: 14px;">
-              <div class="registration-form-note" id="venueConfigStatus">Public self-registration is disabled for this event.</div>
-              <button id="saveVenueConfigBtn" class="button button-secondary" type="button">Save Venue Settings</button>
-            </div>
-          </section>
           <section class="admin-register-only" style="margin-top: 18px;">
             <div class="panel-header">
               <div>
@@ -8849,10 +8816,10 @@
     <div id="view-home" class="view-section">
       <header class="hero hero-simple spectator-only">
         <div class="hero-copy-block">
-        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/rcdriftsync-logo-transparent.png" alt="RC Drift Sync logo" /></div>
-          <p class="eyebrow" id="landingHeroEyebrow">RC Drift Sync</p>
-          <h1 id="landingHeroTitle"><span class="landing-brand-wordmark" aria-label="RC Drift Sync">RC Drift Sync</span></h1>
-          <p id="landingHeroCopy" class="hero-copy">Follow the next event, jump into qualifying and competition, and keep drivers, judges, and spectators synced from one live event hub.</p>
+        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/user/logoprimary-logo-1-1776354367735.png" alt="Rolling Garage RC logo" /></div>
+          <p class="eyebrow" id="landingHeroEyebrow">Rolling Garage RC</p>
+          <h1 id="landingHeroTitle"><span class="landing-brand-wordmark" aria-label="Live Drift Event Hub">Live Drift Event Hub</span></h1>
+          <p id="landingHeroCopy" class="hero-copy">Check in, follow standings, and keep Rolling Garage RC event days moving from one live event home.</p>
           <div class="public-event-actions">
             <button class="button button-accent" type="button" data-landing-jump="self-register">Register</button>
             <button class="button button-secondary" type="button" data-landing-jump="qualifying">Standings</button>
@@ -8900,11 +8867,11 @@
             <section class="panel">
               <div class="panel-header compact">
                 <div>
-                  <p class="section-kicker" id="landingWhySectionKicker">Why RC Drift Sync</p>
+                  <p class="section-kicker" id="landingWhySectionKicker">Built For Event Day</p>
                   <h2>Built For Live RC Drift Events</h2>
                 </div>
               </div>
-               <p class="landing-section-copy" id="landingWhySectionCopy">RC Drift Sync is designed to make real event days smoother for event admins, judges, drivers, and spectators without needing separate tools for check-in, scoring, bracket control, and results.</p>
+               <p class="landing-section-copy" id="landingWhySectionCopy">Rolling Garage RC uses RC Drift Sync to keep check-in, live scoring, bracket control, and results connected in one smoother event-day flow.</p>
               <div id="landingWhyFeatures" class="landing-benefit-grid"></div>
             </section>
 
@@ -8925,7 +8892,7 @@
     <div id="view-self-register" class="view-section">
       <header class="hero">
         <div class="hero-copy-block">
-        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/rcdriftsync-logo-transparent.png" alt="RC Drift Sync logo" /></div>
+        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/user/logoprimary-logo-1-1776354367735.png" alt="Rolling Garage RC logo" /></div>
           <p class="eyebrow">Driver Check-In</p>
           <h1>Self Registration</h1>
           <p class="hero-copy">Pre-register from home, then verify your location at the venue to complete check-in before event admin moves you into the live roster.</p>
@@ -8944,16 +8911,37 @@
             <form id="selfRegisterForm" class="registration-draft-form">
               <div class="self-register-form-grid">
                 <label class="modal-field">
+                  <span>Team</span>
+                  <input id="selfRegisterTeam" type="text" placeholder="Team name" />
+                </label>
+              </div>
+              <div id="selfRegisterModeNote" class="registration-form-note">Solo events accept one driver per pre-registration.</div>
+              <div id="selfRegisterSoloFields" class="self-register-form-grid">
+                <label class="modal-field">
                   <span>Driver Name</span>
                   <input id="selfRegisterName" type="text" placeholder="Driver name" />
                 </label>
                 <label class="modal-field">
-                  <span>Team</span>
-                  <input id="selfRegisterTeam" type="text" placeholder="Team name" />
-                </label>
-                <label class="modal-field">
                   <span>Chassis</span>
                   <input id="selfRegisterChassis" type="text" placeholder="Chassis" />
+                </label>
+              </div>
+              <div id="selfRegisterTeamFields" class="self-register-form-grid" hidden>
+                <label class="modal-field">
+                  <span>Driver 2</span>
+                  <input id="selfRegisterName2" type="text" placeholder="Second driver name" />
+                </label>
+                <label class="modal-field">
+                  <span>Driver 2 Chassis</span>
+                  <input id="selfRegisterChassis2" type="text" placeholder="Second driver chassis" />
+                </label>
+                <label class="modal-field">
+                  <span>Driver 3 (Optional)</span>
+                  <input id="selfRegisterName3" type="text" placeholder="Third driver name" />
+                </label>
+                <label class="modal-field">
+                  <span>Driver 3 Chassis</span>
+                  <input id="selfRegisterChassis3" type="text" placeholder="Third driver chassis" />
                 </label>
               </div>
               <div class="self-register-profile-actions">
@@ -9056,7 +9044,7 @@
     <div id="view-simulation" class="view-section">
       <header class="hero hero-simple spectator-only">
         <div class="hero-copy-block">
-        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/rcdriftsync-logo-transparent.png" alt="RC Drift Sync logo" /></div>
+        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/user/logoprimary-logo-1-1776354367735.png" alt="Rolling Garage RC logo" /></div>
           <p class="eyebrow">Spectator Preview</p>
           <h1>Live Event Simulation</h1>
           <p class="hero-copy">This screen shows a polished example of how registration, qualifying, competition, and results look when the event is running live.</p>
@@ -9126,7 +9114,7 @@
     <div id="view-qualifying" class="view-section">
       <header class="hero hero-simple">
         <div class="hero-copy-block">
-        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/rcdriftsync-logo-transparent.png" alt="RC Drift Sync logo" /></div>
+        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/user/logoprimary-logo-1-1776354367735.png" alt="Rolling Garage RC logo" /></div>
           <div class="spectator-qualifying-title spectator-only">
             <p class="eyebrow">Live Event</p>
             <h1>Qualifying Standings</h1>
@@ -9224,7 +9212,7 @@
     <div id="view-results" class="view-section">
       <header class="hero hero-simple">
         <div class="hero-copy-block">
-        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/rcdriftsync-logo-transparent.png" alt="RC Drift Sync logo" /></div>
+        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/user/logoprimary-logo-1-1776354367735.png" alt="Rolling Garage RC logo" /></div>
           <p class="eyebrow">Results</p>
           <h1>Past Events</h1>
           <p class="hero-copy">
@@ -9258,7 +9246,7 @@
     <div id="view-website-admin" class="view-section">
       <header class="hero">
         <div class="hero-copy-block">
-        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/rcdriftsync-logo-transparent.png" alt="RC Drift Sync logo" /></div>
+        <div class="hero-logo-shell"><img class="hero-logo" src="./assets/user/logoprimary-logo-1-1776354367735.png" alt="Rolling Garage RC logo" /></div>
           <p class="eyebrow">Website Admin</p>
           <h1>Website Admin Panel</h1>
           <p class="hero-copy">
@@ -9393,7 +9381,7 @@
       <!-- Fixed Fullscreen Toolbar -->
       <div class="bracket-header-bar">
         <div id="bracketHeaderLogoSlot">
-              <img class="bracket-header-logo" src="./assets/rcdriftsync-logo-transparent.png" alt="RC Drift Sync logo" />
+              <img class="bracket-header-logo" src="./assets/user/logoprimary-logo-1-1776354367735.png" alt="Rolling Garage RC logo" />
         </div>
         <div class="button-row bracket-header-actions">
           <button id="fullscreenBracketBtn" class="button button-secondary bracket-header-icon-button" type="button" aria-label="Toggle fullscreen bracket" title="Toggle fullscreen">⛶<span class="icon-label">Fullscreen</span></button>
@@ -9439,7 +9427,7 @@
               <div class="bracket-header-center">
                 <p class="section-kicker">Play-In</p>
                 <h2 class="main-board-title">Lower Bracket</h2>
-                <img class="bracket-stage-logo" src="./assets/rcdriftsync-logo-transparent.png" alt="RC Drift Sync logo" />
+                <img class="bracket-stage-logo" src="./assets/user/logoprimary-logo-1-1776354367735.png" alt="Rolling Garage RC logo" />
               </div>
               <div id="lowerBracketNextBattle" class="bracket-flow-slot right"></div>
             </div>
@@ -9458,7 +9446,7 @@
               <div class="bracket-header-center">
                 <p class="section-kicker">Main Event</p>
                 <h2 id="mainBracketTitle" class="main-board-title">Main Competition</h2>
-                <img class="bracket-stage-logo" src="./assets/rcdriftsync-logo-transparent.png" alt="RC Drift Sync logo" />
+                <img class="bracket-stage-logo" src="./assets/user/logoprimary-logo-1-1776354367735.png" alt="Rolling Garage RC logo" />
               </div>
               <div id="mainBracketNextBattle" class="bracket-flow-slot right"></div>
             </div>
@@ -9523,6 +9511,13 @@
             <option value="line-angle-style">Line 40 / Angle 40 / Style 20</option>
           </select>
         </label>
+        <label class="modal-field" for="competitionModeInput">
+          <span>Competition Mode</span>
+          <select id="competitionModeInput">
+            <option value="solo" selected>Solo Drivers</option>
+            <option value="team-tandem">Team Tandems (2-3 drivers)</option>
+          </select>
+        </label>
         <div class="modal-field">
           <span>Access Notes</span>
           <div id="judgingModeHelper" class="helper-text">Each role uses its invite code once to claim its own password for this event.</div>
@@ -9555,6 +9550,74 @@
           <span>Judge 3 Invite</span>
           <input id="judge3InviteInput" class="invite-code-input" type="text" placeholder="JKL-234" />
         </label>
+        <div class="modal-field full-span">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Self-Registration Geofence</p>
+              <h2 style="margin: 0; font-size: clamp(1.4rem, 2vw, 2rem);">Venue Check-In Settings</h2>
+            </div>
+          </div>
+          <div class="self-register-note">Drivers on the public Register page can only submit after their phone is confirmed inside this event radius. Website Admin now sets this while creating or editing the event.</div>
+          <div id="createEventVenueProfileBar" class="venue-profile-bar" style="margin-top: 14px;">
+            <div class="venue-config-grid">
+              <label class="modal-field">
+                <span>Saved Venue Profiles</span>
+                <select id="venueProfileSelect">
+                  <option value="">No saved venue profiles</option>
+                </select>
+              </label>
+              <label class="modal-field">
+                <span>Profile Name</span>
+                <input id="venueProfileNameInput" type="text" placeholder="Portland Track Layout" />
+              </label>
+            </div>
+            <div class="venue-profile-actions">
+              <button id="newVenueProfileBtn" class="button button-secondary" type="button">New Profile</button>
+              <button id="saveVenueProfileBtn" class="button button-secondary" type="button">Save Profile</button>
+              <button id="deleteVenueProfileBtn" class="button button-secondary" type="button">Delete Profile</button>
+            </div>
+          </div>
+          <div class="venue-config-grid" style="margin-top: 14px;">
+            <label class="modal-field">
+              <span>Enable Self-Registration</span>
+              <select id="venueEnabledSelect">
+                <option value="false">Disabled</option>
+                <option value="true">Enabled</option>
+              </select>
+            </label>
+            <label class="modal-field">
+              <span>Venue Label</span>
+              <input id="venueLabelInput" type="text" placeholder="Your Drift Arena" />
+            </label>
+            <label class="modal-field" style="grid-column: 1 / -1;">
+              <span>Paste Maps Link Or Coordinates</span>
+              <div class="venue-paste-row">
+                <input id="venueLocationPasteInput" type="text" placeholder="Paste Google Maps, Apple Maps, or 45.523064, -122.676483" />
+                <button id="applyVenueLocationPasteBtn" class="button button-secondary" type="button">Use Pasted Location</button>
+              </div>
+              <div class="helper-text">Supports map share links and raw latitude/longitude pairs. Paste, apply, then save the event to lock these check-in settings in.</div>
+            </label>
+            <label class="modal-field">
+              <span>Latitude</span>
+              <input id="venueLatitudeInput" type="number" step="any" placeholder="33.000000" />
+            </label>
+            <label class="modal-field">
+              <span>Longitude</span>
+              <input id="venueLongitudeInput" type="number" step="any" placeholder="-117.000000" />
+            </label>
+            <label class="modal-field">
+              <span>Radius (meters)</span>
+              <input id="venueRadiusInput" type="number" min="25" step="1" placeholder="150" />
+            </label>
+            <label class="modal-field">
+              <span>Auto-Close Time</span>
+              <input id="venueCloseAtInput" type="datetime-local" />
+            </label>
+          </div>
+          <div class="registration-form-actions" style="margin-top: 14px;">
+            <div class="registration-form-note" id="venueConfigStatus">Public self-registration is disabled for this event.</div>
+          </div>
+        </div>
       </div>
       <div class="error-msg" id="createEventError" style="margin-bottom: 16px; margin-top: 16px;">Please complete the event setup fields.</div>
       <div class="button-row" style="justify-content: flex-end; margin-top: 20px;">
@@ -9633,86 +9696,86 @@
 
     const DEFAULT_CLIENT_CONFIG = Object.freeze({
       platform: {
-        productName: "RC Drift Sync",
+        productName: "RGRC Sync",
         buildLabel: "Template Build 2026.04.16.1",
-        browserTitle: "RC Drift Competition Control",
+        browserTitle: "RGRC Sync",
         demoWindowName: "rcdriftsync-live-demo-window",
       },
       branding: {
-        venueName: "Your Drift Arena",
-        venueLabelPlaceholder: "Your Drift Arena",
-        eventNamePlaceholder: "Spring Drift Championship",
-        logoPrimary: "./assets/rcdriftsync-logo-transparent.png",
-        logoInverted: "./assets/rcdriftsync-logo-transparent.png",
+        venueName: "Rolling Garage RC",
+        venueLabelPlaceholder: "Rolling Garage RC",
+        eventNamePlaceholder: "Rolling Garage RC",
+        logoPrimary: "./assets/user/logoprimary-logo-1-1776354367735.png",
+        logoInverted: "./assets/user/logoinverted-logo-1-1776352989748.png",
         logoTreatment: {
           invertLight: false,
-          invertDark: false,
+          invertDark: true,
         },
-        logoAlt: "RC Drift Sync logo",
-        backgroundImage: "./assets/template-track-background.png",
-        homeHeroImage: "./assets/template-track-background.png",
-        shopUrl: "",
-        shopLabel: "Visit Track Store",
-        pdfHeaderTitle: "YOUR DRIFT ARENA",
+        logoAlt: "Rolling Garage RC logo",
+        backgroundImage: "./assets/rgrcfront.png",
+        homeHeroImage: "./assets/rgrcfront.png",
+        shopUrl: "https://rollinggaragerc.com/",
+        shopLabel: "Shop at RollingGarage RC",
+        pdfHeaderTitle: "RGRC",
         demoVenueLabel: "Template Demo Arena",
         demoShowcaseName: "Template Showcase",
       },
       typography: {
-        displayFont: "'Ethnocentric', 'Orbitron', 'Inter', sans-serif",
-        bodyFont: "'Inter', sans-serif",
+        displayFont: "'Cream Cake Bold', 'Inter', sans-serif",
+        bodyFont: "'Roboto', sans-serif",
         fontImports: [
-          "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@700;800;900&display=swap",
+          "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap",
         ],
         customFonts: {
           display: {
-            family: "",
-            relativePath: "",
-            format: "",
+            family: "Cream Cake Bold",
+            relativePath: "./assets/user/display-font-nevera-regular-1776352710870.otf",
+            format: "opentype",
           },
           body: {
-            family: "",
-            relativePath: "",
-            format: "",
+            family: "Cream Cake",
+            relativePath: "./assets/user/body-font-cream-cake-1776351555110.otf",
+            format: "opentype",
           },
         },
       },
       theme: {
         light: {
-          accent: "#f446a6",
-          accentDark: "#7f43ff",
-          buttonAccent: "#f446a6",
-          buttonAccentDark: "#7f43ff",
-          accentCyan: "#19bfae",
-          accentGreen: "#1fb95f",
-          accentGreenDark: "#0e6a3c",
-          panelHighlight: "#1fb95f",
-          accentWarm: "#ffaf42",
-          wordmarkColor: "#1b2127",
+          accent: "#2c241d",
+          accentDark: "#8a7358",
+          buttonAccent: "#2b241d",
+          buttonAccentDark: "#7a634b",
+          accentCyan: "#6e8792",
+          accentGreen: "#6f7d62",
+          accentGreenDark: "#4d5847",
+          panelHighlight: "#b48b5a",
+          accentWarm: "#d3a36d",
+          wordmarkColor: "#17130f",
         },
         dark: {
-          accent: "#ff4f9f",
-          accentDark: "#9b38ff",
-          buttonAccent: "#ff4f9f",
-          buttonAccentDark: "#9b38ff",
-          accentCyan: "#37e8d0",
-          accentGreen: "#27d56c",
-          accentGreenDark: "#0d6b3c",
-          panelHighlight: "#27d56c",
-          accentWarm: "#ffb343",
-          wordmarkColor: "#f7f7f7",
+          accent: "#d0a06b",
+          accentDark: "#6f553c",
+          buttonAccent: "#b88a59",
+          buttonAccentDark: "#5c4735",
+          accentCyan: "#87a6b2",
+          accentGreen: "#8fa083",
+          accentGreenDark: "#5b684f",
+          panelHighlight: "#d3a36d",
+          accentWarm: "#f3d3aa",
+          wordmarkColor: "#f3e8db",
         },
       },
       layout: {
-        centerAllText: false,
+        centerAllText: true,
       },
       landing: {
-        whySectionKicker: "Why RC Drift Sync",
+        whySectionKicker: "Built For Event Day",
         heroCopy:
-          "Follow the next event, jump into qualifying and competition, and keep drivers, judges, and spectators synced from one live event hub.",
+          "Follow {eventName} live with qualifying, competition brackets, and results from one Rolling Garage RC event hub.",
         emptyHeroCopy:
-          "Jump into registration, standings, results, and competition from one cleaner front door.",
+          "Check in, follow standings, and keep Rolling Garage RC event days moving from one live event home.",
         whySectionCopy:
-          "RC Drift Sync keeps registration, live qualifying, bracket control, and results in one place so tracks can run smoother event days without juggling separate tools.",
+          "Rolling Garage RC uses RC Drift Sync to keep check-in, live scoring, bracket control, and results connected in one smoother event-day flow.",
         benefits: [
           ["3-Judge Cloud Sync", "Judge phones and tablets feed the same live scoring state without needing separate systems."],
           ["QR Check-In", "Drivers can scan a venue QR code and jump straight into the public registration flow."],
@@ -9846,6 +9909,10 @@
     const FORMAT_SDC_TOP_32 = "sdc-top-32";
     const JUDGING_MODE_AVERAGE = "average";
     const JUDGING_MODE_LINE_ANGLE_STYLE = "line-angle-style";
+    const COMPETITION_MODE_SOLO = "solo";
+    const COMPETITION_MODE_TEAM_TANDEM = "team-tandem";
+    const TEAM_TANDEM_MIN_DRIVERS = 2;
+    const TEAM_TANDEM_MAX_DRIVERS = 3;
     const EVENT_STATUS_ACTIVE = "active";
     const EVENT_STATUS_COMPLETED = "completed";
     const EVENT_STATUS_ARCHIVED = "archived";
@@ -9869,6 +9936,7 @@
     const SELF_REGISTER_PROFILES_STORAGE_KEY = `rc-drift-self-register-profiles-v${EVENT_STORAGE_VERSION}`;
     const JUDGE_ROLE_CLAIM_TTL_MS = 1000 * 60 * 5;
     const JUDGE_ROLE_CLAIM_HEARTBEAT_MS = 1000 * 30;
+    const AUTO_EVENT_SWITCH_CHECK_MS = 1000 * 60;
     const PAGE_SEARCH_PARAMS = typeof window !== "undefined" ? new URLSearchParams(window.location.search || "") : new URLSearchParams();
     const STANDALONE_DEMO_MODE = PAGE_SEARCH_PARAMS.get("demoWindow") === "1";
     const STANDALONE_DEMO_SESSION_PARAM = PAGE_SEARCH_PARAMS.get("demoSession") || "";
@@ -9988,9 +10056,62 @@
       return value === JUDGING_MODE_LINE_ANGLE_STYLE ? JUDGING_MODE_LINE_ANGLE_STYLE : JUDGING_MODE_AVERAGE;
     }
 
+    function normalizeCompetitionMode(value) {
+      return value === COMPETITION_MODE_TEAM_TANDEM ? COMPETITION_MODE_TEAM_TANDEM : COMPETITION_MODE_SOLO;
+    }
+
     function normalizeJudgeCountForMode(value, judgingMode) {
       const normalizedCount = normalizeJudgeCount(value);
       return normalizeJudgingMode(judgingMode) === JUDGING_MODE_LINE_ANGLE_STYLE ? 3 : normalizedCount;
+    }
+
+    function getEventCompetitionMode(eventMeta = activeEventMeta) {
+      return normalizeCompetitionMode(eventMeta?.competitionMode);
+    }
+
+    function isTeamTandemMode(eventMeta = activeEventMeta) {
+      return getEventCompetitionMode(eventMeta) === COMPETITION_MODE_TEAM_TANDEM;
+    }
+
+    function createEmptyRegistrationDraft() {
+      return {
+        name: "",
+        teamName: "",
+        chassis: "",
+        teammate2Name: "",
+        teammate2Chassis: "",
+        teammate3Name: "",
+        teammate3Chassis: "",
+      };
+    }
+
+    function normalizeRegistrationDraftState(draft) {
+      const normalized = {
+        ...createEmptyRegistrationDraft(),
+        ...(draft && typeof draft === "object" ? draft : {}),
+      };
+      return {
+        name: typeof normalized.name === "string" ? normalized.name : "",
+        teamName: typeof normalized.teamName === "string" ? normalized.teamName : "",
+        chassis: typeof normalized.chassis === "string" ? normalized.chassis : "",
+        teammate2Name: typeof normalized.teammate2Name === "string" ? normalized.teammate2Name : "",
+        teammate2Chassis: typeof normalized.teammate2Chassis === "string" ? normalized.teammate2Chassis : "",
+        teammate3Name: typeof normalized.teammate3Name === "string" ? normalized.teammate3Name : "",
+        teammate3Chassis: typeof normalized.teammate3Chassis === "string" ? normalized.teammate3Chassis : "",
+      };
+    }
+
+    function getDraftDriverMembers(draft) {
+      const normalized = normalizeRegistrationDraftState(draft);
+      return [
+        { order: 1, name: normalized.name.trim(), chassis: normalized.chassis.trim() },
+        { order: 2, name: normalized.teammate2Name.trim(), chassis: normalized.teammate2Chassis.trim() },
+        { order: 3, name: normalized.teammate3Name.trim(), chassis: normalized.teammate3Chassis.trim() },
+      ];
+    }
+
+    function getNamedDraftDriverMembers(draft) {
+      return getDraftDriverMembers(draft).filter((member) => Boolean(member.name));
     }
 
     function getEventJudgingMode(eventMeta = activeEventMeta) {
@@ -10281,6 +10402,9 @@
             name: typeof normalized.name === "string" ? normalized.name : "",
             teamName: typeof normalized.teamName === "string" ? normalized.teamName : "",
             chassis: typeof normalized.chassis === "string" ? normalized.chassis : "",
+            teamRegistrationId: typeof normalized.teamRegistrationId === "string" ? normalized.teamRegistrationId : "",
+            teamMemberOrder: Number.isInteger(Number(normalized.teamMemberOrder)) ? Number(normalized.teamMemberOrder) : 0,
+            teamMemberCount: Number.isInteger(Number(normalized.teamMemberCount)) ? Number(normalized.teamMemberCount) : 0,
             deviceToken: typeof normalized.deviceToken === "string" ? normalized.deviceToken : "",
             selfRegisteredAt: normalized.selfRegisteredAt || null,
             checkedInAt: normalized.checkedInAt || null,
@@ -10602,9 +10726,10 @@
       window.alert("SDC Round 3 was restored from the PDF, including both qualifying runs for every driver.");
     }
 
-    async function createEventRecord({ name, date, invites, roleNames = {}, judgeCount = 3, judgingMode = JUDGING_MODE_AVERAGE, id = null, status = "active" }) {
+    async function createEventRecord({ name, date, invites, roleNames = {}, judgeCount = 3, judgingMode = JUDGING_MODE_AVERAGE, competitionMode = COMPETITION_MODE_SOLO, venueConfig = null, venueProfiles = [], id = null, status = "active" }) {
       const createdAt = new Date().toISOString();
       const normalizedJudgingMode = normalizeJudgingMode(judgingMode);
+      const normalizedCompetitionMode = normalizeCompetitionMode(competitionMode);
       return {
         id: id || makeUniqueEventId(name),
         name: name.trim(),
@@ -10613,12 +10738,13 @@
         status: status || EVENT_STATUS_ACTIVE,
         judgeCount: normalizeJudgeCountForMode(judgeCount, normalizedJudgingMode),
         judgingMode: normalizedJudgingMode,
+        competitionMode: normalizedCompetitionMode,
         createdAt,
         updatedAt: createdAt,
         syncStamp: Date.now(),
         roleNames: buildDefaultRoleNames(roleNames),
-        venueConfig: createDefaultVenueConfig(),
-        venueProfiles: [],
+        venueConfig: createDefaultVenueConfig(venueConfig || {}),
+        venueProfiles: normalizeVenueProfileList(venueProfiles),
         pendingRegistrations: [],
         upcomingEventBanner: null,
         latestApprovalToast: null,
@@ -10638,6 +10764,7 @@
         status: EVENT_STATUS_ACTIVE,
         judgeCount: 3,
         judgingMode: JUDGING_MODE_AVERAGE,
+        competitionMode: COMPETITION_MODE_SOLO,
         createdAt,
         updatedAt: createdAt,
         syncStamp: Date.now(),
@@ -10713,6 +10840,9 @@
       }
       normalized.teamName = typeof normalized.teamName === "string" ? normalized.teamName : "";
       normalized.chassis = typeof normalized.chassis === "string" ? normalized.chassis : "";
+      normalized.teamRegistrationId = typeof normalized.teamRegistrationId === "string" ? normalized.teamRegistrationId : "";
+      normalized.teamMemberOrder = Number.isInteger(Number(normalized.teamMemberOrder)) ? Number(normalized.teamMemberOrder) : 0;
+      normalized.teamMemberCount = Number.isInteger(Number(normalized.teamMemberCount)) ? Number(normalized.teamMemberCount) : 0;
       normalized.reg = normalized.signUpPosition;
       return normalized;
     }
@@ -12996,6 +13126,8 @@
     let lastRemoteEventSyncStamp = 0;
     let archivedResultsDirectory = {};
     let deletedEventIds = new Set();
+    let autoEventSwitchTimer = null;
+    let lastAutoEventSwitchDateKey = "";
 
     function openingMatchesMatch(actualMatches, expectedMatches) {
       if (!Array.isArray(actualMatches) || actualMatches.length !== expectedMatches.length) {
@@ -13112,6 +13244,14 @@
       return currentRole === "admin" && !isEventReadOnly();
     }
 
+    function websiteAdminCanEditVenueSettings() {
+      return Boolean(isWebsiteAdmin);
+    }
+
+    function websiteAdminCanManageVenueProfiles() {
+      return Boolean(isWebsiteAdmin && createEventModalMode === "edit" && activeEventMeta && !isEventReadOnly());
+    }
+
     function cloneEventMeta(meta) {
       return meta ? JSON.parse(JSON.stringify(meta)) : null;
     }
@@ -13129,6 +13269,7 @@
           : EVENT_STATUS_ACTIVE,
         judgeCount: normalizeJudgeCountForMode(payload.judgeCount, judgingMode),
         judgingMode,
+        competitionMode: normalizeCompetitionMode(payload.competitionMode),
         createdAt: payload.createdAt || new Date().toISOString(),
         updatedAt: payload.updatedAt || new Date().toISOString(),
         syncStamp: payload.syncStamp || 0,
@@ -13945,7 +14086,8 @@
         eventDirectory[DEFAULT_EVENT_ID] = await createLegacySeedEventRecord();
       }
 
-      activeEventId = localStorage.getItem(ACTIVE_EVENT_STORAGE_KEY) || Object.keys(eventDirectory)[0];
+      const storedActiveEventId = localStorage.getItem(ACTIVE_EVENT_STORAGE_KEY) || Object.keys(eventDirectory)[0];
+      activeEventId = resolveScheduledActiveEventId(storedActiveEventId, new Date()) || storedActiveEventId;
       if (!eventDirectory[activeEventId]) {
         activeEventId = Object.keys(eventDirectory)[0];
       }
@@ -14008,6 +14150,9 @@
     }
 
     function renderAfterRemoteSync() {
+      if (syncScheduledActiveEventSelection({ publishSelection: Boolean(isWebsiteAdmin && !localEventPreviewMode) })) {
+        return;
+      }
       renderEventDirectory();
       renderRoleAdminPanel();
       renderWebsiteAdminAccessState();
@@ -14521,10 +14666,18 @@
     const registrationDriverCount = document.getElementById("registrationDriverCount");
     const registrationAdminAlerts = document.getElementById("registrationAdminAlerts");
     const registrationDraftRegLabel = document.getElementById("registrationDraftRegLabel");
+    const registrationEntryIntro = document.getElementById("registrationEntryIntro");
+    const registrationModeNote = document.getElementById("registrationModeNote");
     const registrationEntryForm = document.getElementById("registrationEntryForm");
     const registrationDraftName = document.getElementById("registrationDraftName");
     const registrationDraftTeam = document.getElementById("registrationDraftTeam");
     const registrationDraftChassis = document.getElementById("registrationDraftChassis");
+    const registrationSoloFields = document.getElementById("registrationSoloFields");
+    const registrationTeamFields = document.getElementById("registrationTeamFields");
+    const registrationDraftName2 = document.getElementById("registrationDraftName2");
+    const registrationDraftChassis2 = document.getElementById("registrationDraftChassis2");
+    const registrationDraftName3 = document.getElementById("registrationDraftName3");
+    const registrationDraftChassis3 = document.getElementById("registrationDraftChassis3");
     const registrationForms = document.getElementById("registrationForms");
     const registrationAddDriverBtn = document.getElementById("registrationAddDriverBtn");
     const registrationManualEntryBtn = document.getElementById("registrationManualEntryBtn");
@@ -14556,6 +14709,13 @@
     const selfRegisterName = document.getElementById("selfRegisterName");
     const selfRegisterTeam = document.getElementById("selfRegisterTeam");
     const selfRegisterChassis = document.getElementById("selfRegisterChassis");
+    const selfRegisterModeNote = document.getElementById("selfRegisterModeNote");
+    const selfRegisterSoloFields = document.getElementById("selfRegisterSoloFields");
+    const selfRegisterTeamFields = document.getElementById("selfRegisterTeamFields");
+    const selfRegisterName2 = document.getElementById("selfRegisterName2");
+    const selfRegisterChassis2 = document.getElementById("selfRegisterChassis2");
+    const selfRegisterName3 = document.getElementById("selfRegisterName3");
+    const selfRegisterChassis3 = document.getElementById("selfRegisterChassis3");
     const selfRegisterSavedProfileSelect = document.getElementById("selfRegisterSavedProfileSelect");
     const useSavedSelfRegisterProfileBtn = document.getElementById("useSavedSelfRegisterProfileBtn");
     const saveCurrentSelfRegisterProfileBtn = document.getElementById("saveCurrentSelfRegisterProfileBtn");
@@ -14694,9 +14854,9 @@
         .replace(/>/g, "&gt;");
     }
 
-    function buildLandingWordmarkHtml() {
-      const productName = String(CLIENT_PLATFORM.productName || "RC Drift Sync").trim() || "RC Drift Sync";
-      return `<span class="landing-brand-wordmark" aria-label="${escapeAttributeValue(productName)}">${escapeHtml(productName)}</span>`;
+    function buildLandingHeroTitleHtml(titleValue) {
+      const heroTitle = String(titleValue || "").trim() || "Live Drift Event Hub";
+      return `<span class="landing-brand-wordmark" aria-label="${escapeAttributeValue(heroTitle)}">${escapeHtml(heroTitle)}</span>`;
     }
 
     function normalizeEventBannerSource(value) {
@@ -14787,29 +14947,29 @@
     function getDefaultClientTheme(themeName) {
       if (themeName === "dark") {
         return {
-          accent: "#ff4f9f",
-          accentDark: "#9b38ff",
-          buttonAccent: "#ff4f9f",
-          buttonAccentDark: "#9b38ff",
-          accentCyan: "#37e8d0",
-          accentGreen: "#27d56c",
-          accentGreenDark: "#0d6b3c",
-          panelHighlight: "#27d56c",
-          accentWarm: "#ffb343",
-          wordmarkColor: "#f7f7f7",
+          accent: "#d0a06b",
+          accentDark: "#6f553c",
+          buttonAccent: "#b88a59",
+          buttonAccentDark: "#5c4735",
+          accentCyan: "#87a6b2",
+          accentGreen: "#8fa083",
+          accentGreenDark: "#5b684f",
+          panelHighlight: "#d3a36d",
+          accentWarm: "#f3d3aa",
+          wordmarkColor: "#f3e8db",
         };
       }
       return {
-        accent: "#f446a6",
-        accentDark: "#7f43ff",
-        buttonAccent: "#f446a6",
-        buttonAccentDark: "#7f43ff",
-        accentCyan: "#19bfae",
-        accentGreen: "#1fb95f",
-        accentGreenDark: "#0e6a3c",
-        panelHighlight: "#1fb95f",
-        accentWarm: "#ffaf42",
-        wordmarkColor: "#1b2127",
+        accent: "#2c241d",
+        accentDark: "#8a7358",
+        buttonAccent: "#2b241d",
+        buttonAccentDark: "#7a634b",
+        accentCyan: "#6e8792",
+        accentGreen: "#6f7d62",
+        accentGreenDark: "#4d5847",
+        panelHighlight: "#b48b5a",
+        accentWarm: "#d3a36d",
+        wordmarkColor: "#17130f",
       };
     }
 
@@ -14977,13 +15137,13 @@
 
     function applyClientBranding() {
       const root = document.documentElement;
-      const primaryLogo = CLIENT_BRANDING.logoPrimary || "./assets/rcdriftsync-logo-transparent.png";
+      const primaryLogo = CLIENT_BRANDING.logoPrimary || "./assets/user/logoprimary-logo-1-1776354367735.png";
       const invertedLogo = CLIENT_BRANDING.logoInverted || primaryLogo;
       const logoTreatment = isPlainObject(CLIENT_BRANDING.logoTreatment) ? CLIENT_BRANDING.logoTreatment : {};
       const logoAlt = CLIENT_BRANDING.logoAlt || CLIENT_BRANDING.venueName || "Track logo";
-      const backgroundImage = CLIENT_BRANDING.backgroundImage || "./assets/template-track-background.png";
+      const backgroundImage = CLIENT_BRANDING.backgroundImage || "./assets/rgrcfront.png";
       const homeHeroImage = CLIENT_BRANDING.homeHeroImage || backgroundImage;
-      const browserTitle = CLIENT_PLATFORM.browserTitle || CLIENT_PLATFORM.productName || "RC Drift Competition Control";
+      const browserTitle = CLIENT_PLATFORM.browserTitle || CLIENT_PLATFORM.productName || "RGRC Sync";
 
       document.title = browserTitle;
       root.style.setProperty("--brand-track-background-image", `url("${backgroundImage}")`);
@@ -14991,8 +15151,8 @@
       root.style.setProperty("--brand-home-hero-image", `url("${homeHeroImage}")`);
       syncClientFontImports();
       syncClientCustomFontFaces();
-      root.style.setProperty("--font-graffiti", CLIENT_TYPOGRAPHY.displayFont || "'Ethnocentric', 'Orbitron', 'Inter', sans-serif");
-      root.style.setProperty("--font-sans", CLIENT_TYPOGRAPHY.bodyFont || "'Inter', sans-serif");
+      root.style.setProperty("--font-graffiti", CLIENT_TYPOGRAPHY.displayFont || "'Cream Cake Bold', 'Ethnocentric', 'Orbitron', 'Inter', sans-serif");
+      root.style.setProperty("--font-sans", CLIENT_TYPOGRAPHY.bodyFont || "'Roboto', 'Inter', sans-serif");
       root.style.setProperty("--brand-logo-filter-light", logoTreatment.invertLight ? "invert(1)" : "none");
       root.style.setProperty("--brand-logo-filter-dark", logoTreatment.invertDark ? "invert(1)" : "none");
       syncClientThemeTokens();
@@ -15004,11 +15164,11 @@
       });
 
       if (landingHeroEyebrow) {
-        landingHeroEyebrow.textContent = CLIENT_PLATFORM.productName || CLIENT_BRANDING.venueName || "RC Drift Sync";
+        landingHeroEyebrow.textContent = CLIENT_BRANDING.venueName || CLIENT_PLATFORM.productName || "RC Drift Sync";
       }
 
       if (landingHeroTitle) {
-        landingHeroTitle.innerHTML = buildLandingWordmarkHtml();
+        landingHeroTitle.innerHTML = buildLandingHeroTitleHtml(CLIENT_BRANDING.venueName || CLIENT_PLATFORM.productName);
       }
 
       if (landingHeroCopy && !activeEventMeta?.name) {
@@ -15062,12 +15222,8 @@
         root.style.removeProperty("--final-vs-font-size");
       }
     }
-    let registrationDraft = {
-      name: "",
-      teamName: "",
-      chassis: "",
-    };
-    let selfRegistrationDraft = loadSavedSelfRegisterProfile();
+    let registrationDraft = createEmptyRegistrationDraft();
+    let selfRegistrationDraft = normalizeRegistrationDraftState(loadSavedSelfRegisterProfile());
     let selfRegistrationState = {
       status: "idle",
       copy: "Pre-register from anywhere, then verify your venue check-in when you arrive.",
@@ -15094,10 +15250,12 @@
     const createEventModal = document.getElementById("createEventModal");
     const createEventModalTitle = document.getElementById("createEventModal")?.querySelector("h3");
     const createEventModalCopy = document.getElementById("createEventModal")?.querySelector(".modal-copy");
+    const createEventVenueProfileBar = document.getElementById("createEventVenueProfileBar");
     const eventNameInput = document.getElementById("eventNameInput");
     const eventDateInput = document.getElementById("eventDateInput");
     const judgeCountInput = document.getElementById("judgeCountInput");
     const judgingModeInput = document.getElementById("judgingModeInput");
+    const competitionModeInput = document.getElementById("competitionModeInput");
     const judgingModeHelper = document.getElementById("judgingModeHelper");
     const adminInviteInput = document.getElementById("adminInviteInput");
     const judge1NameInput = document.getElementById("judge1NameInput");
@@ -16267,6 +16425,99 @@
       return merged;
     }
 
+    function getEventDateSortValue(eventMeta) {
+      const rawValue = typeof eventMeta?.date === "string" ? eventMeta.date.trim() : "";
+      return /^\d{4}-\d{2}-\d{2}$/.test(rawValue) ? rawValue : "";
+    }
+
+    function getLocalCalendarDateKey(referenceDate = new Date()) {
+      const value = referenceDate instanceof Date ? referenceDate : new Date(referenceDate);
+      if (Number.isNaN(value.getTime())) {
+        return new Date().toISOString().slice(0, 10);
+      }
+      const year = value.getFullYear();
+      const month = String(value.getMonth() + 1).padStart(2, "0");
+      const day = String(value.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+
+    function getScheduledActiveEventCandidate(referenceDate = new Date()) {
+      const todayKey = getLocalCalendarDateKey(referenceDate);
+      const visibleEvents = Object.values(getRenderableEventsMap())
+        .filter((eventMeta) => getEventStatus(eventMeta) !== EVENT_STATUS_ARCHIVED);
+      if (!visibleEvents.length) return null;
+
+      const datedEvents = visibleEvents
+        .filter((eventMeta) => Boolean(getEventDateSortValue(eventMeta)))
+        .sort((left, right) => {
+          const rightDate = getEventDateSortValue(right);
+          const leftDate = getEventDateSortValue(left);
+          if (rightDate !== leftDate) return rightDate.localeCompare(leftDate);
+          return (right.updatedAt || "").localeCompare(left.updatedAt || "");
+        });
+
+      const dueEvent = datedEvents.find((eventMeta) => getEventDateSortValue(eventMeta) <= todayKey);
+      if (dueEvent) return dueEvent;
+
+      const upcomingEvent = [...datedEvents].sort((left, right) => {
+        const leftDate = getEventDateSortValue(left);
+        const rightDate = getEventDateSortValue(right);
+        if (leftDate !== rightDate) return leftDate.localeCompare(rightDate);
+        return (right.updatedAt || "").localeCompare(left.updatedAt || "");
+      })[0] || null;
+      if (upcomingEvent) return upcomingEvent;
+
+      return sortEventsForDisplay().find((eventMeta) => getEventStatus(eventMeta) !== EVENT_STATUS_ARCHIVED)
+        || sortEventsForDisplay()[0]
+        || null;
+    }
+
+    function resolveScheduledActiveEventId(currentEventId = activeEventId, referenceDate = new Date()) {
+      const candidateEvent = getScheduledActiveEventCandidate(referenceDate);
+      if (!candidateEvent?.id || !eventDirectory[candidateEvent.id]) return null;
+      if (!currentEventId || !eventDirectory[currentEventId]) return candidateEvent.id;
+      if (candidateEvent.id === currentEventId) return null;
+
+      const todayKey = getLocalCalendarDateKey(referenceDate);
+      const currentEvent = eventDirectory[currentEventId];
+      const currentDate = getEventDateSortValue(currentEvent);
+      const candidateDate = getEventDateSortValue(candidateEvent);
+      if (getEventStatus(currentEvent) === EVENT_STATUS_ARCHIVED) return candidateEvent.id;
+      if (!currentDate) return candidateEvent.id;
+      if (!candidateDate) return null;
+
+      const currentIsFuture = currentDate > todayKey;
+      const candidateIsDue = candidateDate <= todayKey;
+      if (currentIsFuture && candidateIsDue) return candidateEvent.id;
+      if (candidateIsDue && candidateDate > currentDate) return candidateEvent.id;
+      return null;
+    }
+
+    function syncScheduledActiveEventSelection(options = {}) {
+      if (localEventPreviewMode && !options.allowDuringPreview) return false;
+      const referenceDate = options.referenceDate instanceof Date ? options.referenceDate : new Date();
+      const nextEventId = resolveScheduledActiveEventId(options.currentEventId || activeEventId, referenceDate);
+      if (!nextEventId) return false;
+      openEventById(nextEventId, null, options.publishSelection === true);
+      if (options.renderAfterSwitch !== false) {
+        renderAfterRemoteSync();
+      }
+      return true;
+    }
+
+    function startAutoEventSwitchWatcher() {
+      lastAutoEventSwitchDateKey = getLocalCalendarDateKey();
+      if (autoEventSwitchTimer) return;
+      autoEventSwitchTimer = window.setInterval(() => {
+        const todayKey = getLocalCalendarDateKey();
+        if (todayKey === lastAutoEventSwitchDateKey) return;
+        lastAutoEventSwitchDateKey = todayKey;
+        syncScheduledActiveEventSelection({
+          publishSelection: Boolean(isWebsiteAdmin && !localEventPreviewMode),
+        });
+      }, AUTO_EVENT_SWITCH_CHECK_MS);
+    }
+
     function sortEventsForDisplay() {
       return Object.values(getRenderableEventsMap()).sort((left, right) => {
         if ((getEventStatus(left) === EVENT_STATUS_ARCHIVED) !== (getEventStatus(right) === EVENT_STATUS_ARCHIVED)) {
@@ -16294,18 +16545,121 @@
       return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
     }
 
+    function getPendingRegistrationGroupId(entry) {
+      return String(entry?.teamRegistrationId || entry?.id || "");
+    }
+
+    function getPendingRegistrationGroupEntries(entryId, eventMeta = activeEventMeta) {
+      const pendingEntries = getPendingRegistrations(eventMeta);
+      const seedEntry = pendingEntries.find((entry) => entry.id === entryId);
+      if (!seedEntry) return [];
+      const groupId = getPendingRegistrationGroupId(seedEntry);
+      return pendingEntries
+        .filter((entry) => getPendingRegistrationGroupId(entry) === groupId)
+        .sort((left, right) => (left.teamMemberOrder || 0) - (right.teamMemberOrder || 0));
+    }
+
+    function getPendingRegistrationGroupLeader(entries) {
+      return [...(Array.isArray(entries) ? entries : [])]
+        .sort((left, right) => (left.teamMemberOrder || 0) - (right.teamMemberOrder || 0))[0] || null;
+    }
+
+    function getPendingRegistrationGroupByDeviceToken(deviceToken = getSelfRegisterDeviceId(), eventMeta = activeEventMeta) {
+      if (!deviceToken) return [];
+      const deviceEntries = findPendingRegistrationByDeviceToken(deviceToken, eventMeta);
+      if (!deviceEntries.length) return [];
+      const groupIds = [...new Set(deviceEntries.map((entry) => getPendingRegistrationGroupId(entry)).filter(Boolean))];
+      if (groupIds.length !== 1) return [];
+      return getPendingRegistrationGroupEntries(deviceEntries[0].id, eventMeta);
+    }
+
+    function getDraftSubmissionKey(draft, eventMeta = activeEventMeta) {
+      if (isTeamTandemMode(eventMeta)) {
+        const teamName = (draft?.teamName || "").trim();
+        const memberNames = getNamedDraftDriverMembers(draft).map((member) => member.name).join("|");
+        return teamName ? `${teamName}|${memberNames}` : memberNames;
+      }
+      return (draft?.name || "").trim();
+    }
+
+    function getDraftMemberInputs(prefix) {
+      if (prefix === "self") {
+        return [
+          { nameInput: selfRegisterName, chassisInput: selfRegisterChassis },
+          { nameInput: selfRegisterName2, chassisInput: selfRegisterChassis2 },
+          { nameInput: selfRegisterName3, chassisInput: selfRegisterChassis3 },
+        ];
+      }
+      return [
+        { nameInput: registrationDraftName, chassisInput: registrationDraftChassis },
+        { nameInput: registrationDraftName2, chassisInput: registrationDraftChassis2 },
+        { nameInput: registrationDraftName3, chassisInput: registrationDraftChassis3 },
+      ];
+    }
+
+    function validateTeamTandemDraft(draft, options = {}) {
+      const normalizedDraft = normalizeRegistrationDraftState(draft);
+      const teamName = normalizedDraft.teamName.trim();
+      const slots = getDraftDriverMembers(normalizedDraft);
+      const namedMembers = slots.filter((slot) => Boolean(slot.name));
+      const inputSlots = getDraftMemberInputs(options.prefix === "self" ? "self" : "registration");
+      const teamInput = options.prefix === "self" ? selfRegisterTeam : registrationDraftTeam;
+
+      if (!teamName) {
+        window.alert("Team tandem registration requires a team name.");
+        teamInput?.focus();
+        return null;
+      }
+
+      const chassisWithoutName = slots.find((slot) => slot.chassis && !slot.name);
+      if (chassisWithoutName) {
+        window.alert(`Driver ${chassisWithoutName.order} needs a name before adding a chassis.`);
+        inputSlots[chassisWithoutName.order - 1]?.nameInput?.focus();
+        return null;
+      }
+
+      if (namedMembers.length < TEAM_TANDEM_MIN_DRIVERS) {
+        window.alert(`Team tandem registration requires ${TEAM_TANDEM_MIN_DRIVERS} to ${TEAM_TANDEM_MAX_DRIVERS} drivers.`);
+        inputSlots[1]?.nameInput?.focus();
+        return null;
+      }
+
+      const normalizedNames = new Set();
+      for (const member of namedMembers) {
+        const normalizedName = normalizeDriverName(member.name);
+        if (normalizedNames.has(normalizedName)) {
+          window.alert(`${member.name} is listed twice in the same team registration.`);
+          inputSlots[member.order - 1]?.nameInput?.focus();
+          return null;
+        }
+        normalizedNames.add(normalizedName);
+      }
+
+      return { teamName, members: namedMembers };
+    }
+
     function findDuplicateDriverEntry(name, options = {}) {
       const normalizedName = normalizeDriverName(name);
       if (!normalizedName) return null;
       const excludePendingId = options.excludePendingId || null;
       const excludeDriverId = options.excludeDriverId || null;
+      const excludePendingIds = new Set(Array.isArray(options.excludePendingIds) ? options.excludePendingIds : []);
+      const excludeDriverIds = new Set(Array.isArray(options.excludeDriverIds) ? options.excludeDriverIds : []);
       const liveDriver = getRegisteredDrivers(options.drivers || appDrivers)
-        .find((driver) => driver.id !== excludeDriverId && normalizeDriverName(driver.name) === normalizedName);
+        .find((driver) =>
+          driver.id !== excludeDriverId
+          && !excludeDriverIds.has(driver.id)
+          && normalizeDriverName(driver.name) === normalizedName
+        );
       if (liveDriver) {
         return { type: "roster", entry: liveDriver };
       }
       const pendingEntry = getPendingRegistrations(options.eventMeta || activeEventMeta)
-        .find((entry) => entry.id !== excludePendingId && normalizeDriverName(entry.name) === normalizedName);
+        .find((entry) =>
+          entry.id !== excludePendingId
+          && !excludePendingIds.has(entry.id)
+          && normalizeDriverName(entry.name) === normalizedName
+        );
       if (pendingEntry) {
         return { type: "pending", entry: pendingEntry };
       }
@@ -16382,16 +16736,11 @@
     function loadSavedSelfRegisterProfile() {
       try {
         const raw = localStorage.getItem(SELF_REGISTER_PROFILE_STORAGE_KEY);
-        if (!raw) return { name: "", teamName: "", chassis: "" };
-        const parsed = JSON.parse(raw);
-        return {
-          name: typeof parsed?.name === "string" ? parsed.name : "",
-          teamName: typeof parsed?.teamName === "string" ? parsed.teamName : "",
-          chassis: typeof parsed?.chassis === "string" ? parsed.chassis : "",
-        };
+        if (!raw) return createEmptyRegistrationDraft();
+        return normalizeRegistrationDraftState(JSON.parse(raw));
       } catch (error) {
         console.warn("Failed to load saved self-registration profile.", error);
-        return { name: "", teamName: "", chassis: "" };
+        return createEmptyRegistrationDraft();
       }
     }
 
@@ -16405,6 +16754,10 @@
             name: typeof normalized.name === "string" ? normalized.name : "",
             teamName: typeof normalized.teamName === "string" ? normalized.teamName : "",
             chassis: typeof normalized.chassis === "string" ? normalized.chassis : "",
+            teammate2Name: typeof normalized.teammate2Name === "string" ? normalized.teammate2Name : "",
+            teammate2Chassis: typeof normalized.teammate2Chassis === "string" ? normalized.teammate2Chassis : "",
+            teammate3Name: typeof normalized.teammate3Name === "string" ? normalized.teammate3Name : "",
+            teammate3Chassis: typeof normalized.teammate3Chassis === "string" ? normalized.teammate3Chassis : "",
             lastUsedAt: normalized.lastUsedAt || null,
           };
         })
@@ -16433,11 +16786,7 @@
 
     function persistSelfRegisterProfile() {
       try {
-        localStorage.setItem(SELF_REGISTER_PROFILE_STORAGE_KEY, JSON.stringify({
-          name: selfRegistrationDraft.name || "",
-          teamName: selfRegistrationDraft.teamName || "",
-          chassis: selfRegistrationDraft.chassis || "",
-        }));
+        localStorage.setItem(SELF_REGISTER_PROFILE_STORAGE_KEY, JSON.stringify(normalizeRegistrationDraftState(selfRegistrationDraft)));
       } catch (error) {
         console.warn("Failed to save self-registration profile.", error);
       }
@@ -16489,23 +16838,36 @@
       return getPendingRegistrations(eventMeta).filter((entry) => entry.deviceToken && entry.deviceToken === deviceToken);
     }
 
-    function getPendingEntryForCheckIn(name = (selfRegistrationDraft.name || "").trim(), deviceToken = getSelfRegisterDeviceId(), eventMeta = activeEventMeta) {
+    function getPendingEntryGroupForCheckIn(draft = selfRegistrationDraft, deviceToken = getSelfRegisterDeviceId(), eventMeta = activeEventMeta) {
       const pendingEntries = getPendingRegistrations(eventMeta);
-      const normalizedName = normalizeDriverName(name);
-      if (normalizedName) {
+      const memberNames = getNamedDraftDriverMembers(draft).map((member) => normalizeDriverName(member.name)).filter(Boolean);
+      if (memberNames.length) {
         const namedMatch = pendingEntries.find((entry) =>
-          normalizeDriverName(entry.name) === normalizedName
+          memberNames.includes(normalizeDriverName(entry.name))
           && (!deviceToken || !entry.deviceToken || entry.deviceToken === deviceToken)
         );
-        if (namedMatch) return namedMatch;
+        if (namedMatch) return getPendingRegistrationGroupEntries(namedMatch.id, eventMeta);
       }
-      const deviceMatches = findPendingRegistrationByDeviceToken(deviceToken, eventMeta);
-      return deviceMatches.length === 1 ? deviceMatches[0] : null;
+      return getPendingRegistrationGroupByDeviceToken(deviceToken, eventMeta);
+    }
+
+    function getPendingEntryForCheckIn(name = (selfRegistrationDraft.name || "").trim(), deviceToken = getSelfRegisterDeviceId(), eventMeta = activeEventMeta) {
+      const groupEntries = getPendingEntryGroupForCheckIn(
+        normalizeRegistrationDraftState({
+          ...selfRegistrationDraft,
+          name,
+        }),
+        deviceToken,
+        eventMeta,
+      );
+      return getPendingRegistrationGroupLeader(groupEntries);
     }
 
     function buildSelfRegisterProfileLabel(profile) {
       const name = (profile?.name || "").trim() || "Unnamed Driver";
       const team = (profile?.teamName || "").trim();
+      const memberCount = getNamedDraftDriverMembers(profile).length;
+      if (team && memberCount > 1) return `${team} | ${memberCount} drivers`;
       return team ? `${name} | ${team}` : name;
     }
 
@@ -16518,7 +16880,7 @@
         return;
       }
       selfRegisterSavedProfileSelect.innerHTML = [
-        `<option value="">Choose a saved driver</option>`,
+        `<option value="">${isTeamTandemMode() ? "Choose a saved team" : "Choose a saved driver"}</option>`,
         ...profiles.map((profile) => `<option value="${escapeHtml(profile.id)}">${escapeHtml(buildSelfRegisterProfileLabel(profile))}</option>`)
       ].join("");
       selfRegisterSavedProfileSelect.value = profiles.some((profile) => profile.id === selectedId) ? selectedId : "";
@@ -16542,6 +16904,10 @@
         name,
         teamName: (selfRegistrationDraft.teamName || "").trim(),
         chassis: (selfRegistrationDraft.chassis || "").trim(),
+        teammate2Name: (selfRegistrationDraft.teammate2Name || "").trim(),
+        teammate2Chassis: (selfRegistrationDraft.teammate2Chassis || "").trim(),
+        teammate3Name: (selfRegistrationDraft.teammate3Name || "").trim(),
+        teammate3Chassis: (selfRegistrationDraft.teammate3Chassis || "").trim(),
         lastUsedAt: now,
       };
       const nextProfiles = [
@@ -16556,11 +16922,7 @@
     function applySavedSelfRegisterProfile(profileId) {
       const profile = loadSavedSelfRegisterProfiles().find((entry) => entry.id === profileId);
       if (!profile) return false;
-      selfRegistrationDraft = {
-        name: profile.name || "",
-        teamName: profile.teamName || "",
-        chassis: profile.chassis || "",
-      };
+      selfRegistrationDraft = normalizeRegistrationDraftState(profile);
       persistSelfRegisterProfile();
       syncSavedSelfRegisterProfilesUi(profile.id);
       syncSelfRegisterForm();
@@ -16641,7 +17003,7 @@
     }
 
     function saveVenueProfileDraft() {
-      if (!adminCanEdit() || !activeEventMeta) return false;
+      if (!websiteAdminCanManageVenueProfiles()) return false;
       const currentProfiles = getVenueProfiles();
       const selectedId = venueProfileSelect?.value || "";
       const trimmedName = (venueProfileNameInput?.value || "").trim();
@@ -16672,7 +17034,7 @@
     }
 
     function deleteSelectedVenueProfile() {
-      if (!adminCanEdit() || !activeEventMeta) return false;
+      if (!websiteAdminCanManageVenueProfiles()) return false;
       const selectedId = venueProfileSelect?.value || "";
       if (!selectedId) return false;
       const currentProfiles = getVenueProfiles();
@@ -16695,28 +17057,57 @@
 
     function syncRegistrationDraftForm() {
       const canEditRegistration = registrationCanEdit();
+      const teamMode = isTeamTandemMode();
       if (registrationDraftName) registrationDraftName.value = registrationDraft.name || "";
       if (registrationDraftTeam) registrationDraftTeam.value = registrationDraft.teamName || "";
       if (registrationDraftChassis) registrationDraftChassis.value = registrationDraft.chassis || "";
+      if (registrationDraftName2) registrationDraftName2.value = registrationDraft.teammate2Name || "";
+      if (registrationDraftChassis2) registrationDraftChassis2.value = registrationDraft.teammate2Chassis || "";
+      if (registrationDraftName3) registrationDraftName3.value = registrationDraft.teammate3Name || "";
+      if (registrationDraftChassis3) registrationDraftChassis3.value = registrationDraft.teammate3Chassis || "";
       if (registrationDraftName) registrationDraftName.disabled = !canEditRegistration;
       if (registrationDraftTeam) registrationDraftTeam.disabled = !canEditRegistration;
       if (registrationDraftChassis) registrationDraftChassis.disabled = !canEditRegistration;
+      if (registrationDraftName2) registrationDraftName2.disabled = !canEditRegistration;
+      if (registrationDraftChassis2) registrationDraftChassis2.disabled = !canEditRegistration;
+      if (registrationDraftName3) registrationDraftName3.disabled = !canEditRegistration;
+      if (registrationDraftChassis3) registrationDraftChassis3.disabled = !canEditRegistration;
+      if (registrationTeamFields) registrationTeamFields.hidden = !teamMode;
+      if (registrationSoloFields) registrationSoloFields.hidden = false;
       if (registrationAddDriverBtn) registrationAddDriverBtn.disabled = !canEditRegistration;
+      if (registrationAddDriverBtn) registrationAddDriverBtn.textContent = teamMode ? "Add Team" : "Add Driver";
       if (registrationManualEntryBtn) registrationManualEntryBtn.disabled = !canEditRegistration;
       if (registrationAddDriverSecondaryBtn) registrationAddDriverSecondaryBtn.disabled = !canEditRegistration;
+      if (registrationAddDriverSecondaryBtn) registrationAddDriverSecondaryBtn.textContent = teamMode ? "Submit Team" : "Submit Driver";
+      if (registrationEntryIntro) {
+        registrationEntryIntro.textContent = teamMode
+          ? "Team tandem mode registers one team at a time. Team name is required, Driver 1 and Driver 2 are required, and Driver 3 is optional."
+          : "Submit one driver at a time. After each submit, a fresh form appears automatically for the next registration number.";
+      }
+      if (registrationModeNote) {
+        registrationModeNote.textContent = teamMode
+          ? "Use the first driver fields for Driver 1, then add Driver 2 and an optional Driver 3 below. All submitted drivers stay linked to the same team."
+          : "Team names are optional for solo driver events.";
+      }
       if (registrationDraftRegLabel) {
-        registrationDraftRegLabel.textContent = `Next registration number: #${getNextSignUpPosition(appDrivers)}`;
+        registrationDraftRegLabel.textContent = teamMode
+          ? `Next team starts at registration #: #${getNextSignUpPosition(appDrivers)}`
+          : `Next registration number: #${getNextSignUpPosition(appDrivers)}`;
       }
     }
 
     function syncVenueConfigForm(options = {}) {
       const preserveDraft = Boolean(options.preserveDraft);
-      const venueConfig = getVenueConfig();
-      const canEditVenue = adminCanEdit();
-      const selectedProfileId = preserveDraft ? (venueProfileSelect?.value || "") : "";
+      const canEditVenue = websiteAdminCanEditVenueSettings();
+      const canManageProfiles = websiteAdminCanManageVenueProfiles();
+      const selectedProfileId = preserveDraft && canManageProfiles ? (venueProfileSelect?.value || "") : "";
+      const venueConfig = createDefaultVenueConfig(preserveDraft ? collectVenueConfigFromForm() : getVenueConfig());
       const isClosedByQualifying = isSelfRegistrationClosedByQualifying();
       if (!preserveDraft) {
         applyVenueConfigToForm(venueConfig);
+      }
+      if (createEventVenueProfileBar) {
+        createEventVenueProfileBar.classList.toggle("hidden", createEventModalMode !== "edit");
       }
       if (venueEnabledSelect) venueEnabledSelect.disabled = !canEditVenue;
       if (venueLocationPasteInput) venueLocationPasteInput.disabled = !canEditVenue;
@@ -16730,22 +17121,28 @@
       if (venueProfileNameInput) {
         const selectedProfile = getVenueProfileById(venueProfileSelect?.value || "");
         venueProfileNameInput.value = selectedProfile?.name || "";
-        venueProfileNameInput.disabled = !canEditVenue;
+        venueProfileNameInput.disabled = !canManageProfiles;
       }
-      if (newVenueProfileBtn) newVenueProfileBtn.disabled = !canEditVenue;
-      if (saveVenueProfileBtn) saveVenueProfileBtn.disabled = !canEditVenue;
+      if (venueProfileSelect) venueProfileSelect.disabled = !canManageProfiles;
+      if (newVenueProfileBtn) newVenueProfileBtn.disabled = !canManageProfiles;
+      if (saveVenueProfileBtn) saveVenueProfileBtn.disabled = !canManageProfiles;
       if (deleteVenueProfileBtn) {
-        deleteVenueProfileBtn.disabled = !canEditVenue || !(venueProfileSelect?.value || "");
+        deleteVenueProfileBtn.disabled = !canManageProfiles || !(venueProfileSelect?.value || "");
       }
       if (saveVenueConfigBtn) saveVenueConfigBtn.disabled = !canEditVenue;
       if (venueConfigStatus) {
-        const closeReason = getSelfRegistrationCloseReason();
+        const venueStatusMeta = {
+          ...(activeEventMeta || {}),
+          name: (eventNameInput?.value || activeEventMeta?.name || "").trim(),
+          venueConfig,
+        };
+        const closeReason = getSelfRegistrationCloseReason(venueStatusMeta);
         venueConfigStatus.textContent = closeReason
           ? closeReason === "scheduled-close"
             ? `Self-registration is closed because the scheduled close time has passed${venueConfig.closeAt ? ` (${new Date(venueConfig.closeAt).toLocaleString()})` : ""}.`
             : "Self-registration is automatically closed because qualifying has already started."
-          : hasValidVenueConfig()
-          ? `Enabled for ${venueConfig.label || activeEventMeta?.name || "this venue"} within ${Math.round(Number(venueConfig.radiusMeters) || 0)} meters${venueConfig.closeAt ? ` until ${new Date(venueConfig.closeAt).toLocaleString()}` : ""}.`
+          : hasValidVenueConfig(venueStatusMeta)
+          ? `Enabled for ${venueConfig.label || (eventNameInput?.value || "").trim() || activeEventMeta?.name || "this venue"} within ${Math.round(Number(venueConfig.radiusMeters) || 0)} meters${venueConfig.closeAt ? ` until ${new Date(venueConfig.closeAt).toLocaleString()}` : ""}.`
           : "Public self-registration is disabled for this event.";
       }
     }
@@ -16754,28 +17151,46 @@
       const venueIsValid = hasValidVenueConfig();
       const closeReason = getSelfRegistrationCloseReason();
       const isClosedByQualifying = Boolean(closeReason);
-      const hasDraftName = Boolean((selfRegistrationDraft.name || "").trim());
+      const teamMode = isTeamTandemMode();
+      const draftSlots = getDraftDriverMembers(selfRegistrationDraft);
+      const namedDraftMembers = draftSlots.filter((member) => Boolean(member.name));
+      const hasDraftName = teamMode
+        ? Boolean((selfRegistrationDraft.teamName || "").trim()) && namedDraftMembers.length >= TEAM_TANDEM_MIN_DRIVERS && !draftSlots.some((member) => member.chassis && !member.name)
+        : Boolean((selfRegistrationDraft.name || "").trim());
       const canSubmit = venueIsValid && !isEventReadOnly() && !isClosedByQualifying && hasDraftName;
       const effectiveCopy = venueIsValid
         ? selfRegistrationState.copy
         : "Pre-registration is disabled until event admin saves a valid venue location and radius.";
       const effectiveStatus = !venueIsValid || isClosedByQualifying ? "error" : selfRegistrationState.status;
-      const pendingCheckInEntry = getPendingEntryForCheckIn();
+      const pendingCheckInGroup = getPendingEntryGroupForCheckIn();
+      const pendingCheckInEntry = getPendingRegistrationGroupLeader(pendingCheckInGroup);
       if (selfRegisterName) selfRegisterName.value = selfRegistrationDraft.name || "";
       if (selfRegisterTeam) selfRegisterTeam.value = selfRegistrationDraft.teamName || "";
       if (selfRegisterChassis) selfRegisterChassis.value = selfRegistrationDraft.chassis || "";
+      if (selfRegisterName2) selfRegisterName2.value = selfRegistrationDraft.teammate2Name || "";
+      if (selfRegisterChassis2) selfRegisterChassis2.value = selfRegistrationDraft.teammate2Chassis || "";
+      if (selfRegisterName3) selfRegisterName3.value = selfRegistrationDraft.teammate3Name || "";
+      if (selfRegisterChassis3) selfRegisterChassis3.value = selfRegistrationDraft.teammate3Chassis || "";
       if (selfRegisterName) selfRegisterName.disabled = !venueIsValid || isEventReadOnly() || isClosedByQualifying;
       if (selfRegisterTeam) selfRegisterTeam.disabled = !venueIsValid || isEventReadOnly() || isClosedByQualifying;
       if (selfRegisterChassis) selfRegisterChassis.disabled = !venueIsValid || isEventReadOnly() || isClosedByQualifying;
+      if (selfRegisterName2) selfRegisterName2.disabled = !venueIsValid || isEventReadOnly() || isClosedByQualifying;
+      if (selfRegisterChassis2) selfRegisterChassis2.disabled = !venueIsValid || isEventReadOnly() || isClosedByQualifying;
+      if (selfRegisterName3) selfRegisterName3.disabled = !venueIsValid || isEventReadOnly() || isClosedByQualifying;
+      if (selfRegisterChassis3) selfRegisterChassis3.disabled = !venueIsValid || isEventReadOnly() || isClosedByQualifying;
+      if (selfRegisterTeamFields) selfRegisterTeamFields.hidden = !teamMode;
+      if (selfRegisterSoloFields) selfRegisterSoloFields.hidden = false;
       if (selfRegisterSubmitBtn) {
         selfRegisterSubmitBtn.disabled = !canSubmit;
         selfRegisterSubmitBtn.textContent = pendingCheckInEntry
-          ? "Update Pre-Registration"
-          : "Pre-Register";
+          ? teamMode ? "Update Team Pre-Registration" : "Update Pre-Registration"
+          : teamMode ? "Pre-Register Team" : "Pre-Register";
       }
       if (selfRegisterLocateBtn) {
         selfRegisterLocateBtn.disabled = !venueIsValid || isEventReadOnly() || isClosedByQualifying;
-        selfRegisterLocateBtn.textContent = pendingCheckInEntry?.checkedInAt ? "Venue Check-In Verified" : "Verify Venue Check-In";
+        selfRegisterLocateBtn.textContent = pendingCheckInEntry?.checkedInAt
+          ? "Venue Check-In Verified"
+          : teamMode ? "Verify Team Venue Check-In" : "Verify Venue Check-In";
       }
       if (selfRegisterStatus) {
         selfRegisterStatus.classList.remove("is-ready", "is-locked", "is-error");
@@ -16795,13 +17210,19 @@
       if (selfRegisterFormNote) {
         selfRegisterFormNote.textContent = selfRegistrationState.unlocked
           ? pendingCheckInEntry?.checkedInAt
-            ? "Venue check-in confirmed. Event admin can now approve this driver after payment."
-            : "Venue check-in confirmed. Submit now to pre-register with on-site verification."
+            ? teamMode
+              ? "Venue check-in confirmed. Event admin can now approve this team after payment."
+              : "Venue check-in confirmed. Event admin can now approve this driver after payment."
+            : teamMode
+              ? "Venue check-in confirmed. Submit now to pre-register this team with on-site verification."
+              : "Venue check-in confirmed. Submit now to pre-register with on-site verification."
           : isClosedByQualifying
             ? closeReason === "scheduled-close"
               ? "Pre-registration is closed because the scheduled close time has passed."
               : "Pre-registration is closed once qualifying is live."
-            : "Pre-register from anywhere, then tap Verify Venue Check-In when you arrive.";
+            : teamMode
+              ? "Team tandem mode requires a team name plus 2-3 drivers. Verify venue check-in when the team arrives."
+              : "Pre-register from anywhere, then tap Verify Venue Check-In when you arrive.";
       }
       if (selfRegisterVenueMeta) {
         const venueConfig = getVenueConfig();
@@ -16823,11 +17244,24 @@
           (selfRegistrationDraft.name || "").trim()
           || (selfRegistrationDraft.teamName || "").trim()
           || (selfRegistrationDraft.chassis || "").trim()
+          || (selfRegistrationDraft.teammate2Name || "").trim()
+          || (selfRegistrationDraft.teammate2Chassis || "").trim()
+          || (selfRegistrationDraft.teammate3Name || "").trim()
+          || (selfRegistrationDraft.teammate3Chassis || "").trim()
         );
         const savedProfiles = loadSavedSelfRegisterProfiles();
         selfRegisterSavedProfileNote.textContent = hasSavedProfile
-          ? `This device is remembering the current driver details. Saved profiles available: ${savedProfiles.length}.`
-          : `This device can remember driver details for faster check-in next time. Saved profiles: ${savedProfiles.length}.`;
+          ? teamMode
+            ? `This device is remembering the current team details. Saved profiles available: ${savedProfiles.length}.`
+            : `This device is remembering the current driver details. Saved profiles available: ${savedProfiles.length}.`
+          : teamMode
+            ? `This device can remember team details for faster tandem check-in next time. Saved profiles: ${savedProfiles.length}.`
+            : `This device can remember driver details for faster check-in next time. Saved profiles: ${savedProfiles.length}.`;
+      }
+      if (selfRegisterModeNote) {
+        selfRegisterModeNote.textContent = teamMode
+          ? "Use the first driver fields for Driver 1, then add Driver 2 and an optional Driver 3. Team name is required."
+          : "Solo events accept one driver per pre-registration.";
       }
       syncSavedSelfRegisterProfilesUi(selfRegisterSavedProfileSelect?.value || "");
       syncSelfRegisterProfileCard();
@@ -17044,6 +17478,25 @@
       const duplicateNames = getDuplicateDriverNames();
       if (duplicateNames.length) {
         warnings.push(`Duplicate driver names detected: ${duplicateNames.join(", ")}.`);
+      }
+
+      if (isTeamTandemMode()) {
+        const registeredDrivers = getRegisteredDrivers(appDrivers);
+        const missingTeamDrivers = registeredDrivers.filter((driver) => !(driver.teamName || "").trim());
+        if (missingTeamDrivers.length) {
+          warnings.push(`Team tandem mode still has drivers without team names: ${missingTeamDrivers.slice(0, 3).map((driver) => driver.name || "Unnamed").join(", ")}${missingTeamDrivers.length > 3 ? "..." : ""}.`);
+        }
+
+        const teamCounts = new Map();
+        registeredDrivers.forEach((driver) => {
+          const teamName = (driver.teamName || "").trim();
+          if (!teamName) return;
+          teamCounts.set(teamName, (teamCounts.get(teamName) || 0) + 1);
+        });
+        const invalidTeams = [...teamCounts.entries()].filter(([, count]) => count < TEAM_TANDEM_MIN_DRIVERS || count > TEAM_TANDEM_MAX_DRIVERS);
+        if (invalidTeams.length) {
+          warnings.push(`Team tandem teams should have ${TEAM_TANDEM_MIN_DRIVERS}-${TEAM_TANDEM_MAX_DRIVERS} drivers: ${invalidTeams.slice(0, 3).map(([teamName, count]) => `${teamName} (${count})`).join(", ")}${invalidTeams.length > 3 ? "..." : ""}.`);
+        }
       }
 
       const paidAwaitingCount = getPendingRegistrations().filter((entry) => Boolean(entry.paidAt)).length;
@@ -17336,14 +17789,16 @@
       const name = (selfRegistrationDraft.name || "").trim();
       const team = (selfRegistrationDraft.teamName || "").trim();
       const chassis = (selfRegistrationDraft.chassis || "").trim();
+      const extraMembers = getNamedDraftDriverMembers(selfRegistrationDraft).slice(1).map((member) => member.name);
+      const teamMode = isTeamTandemMode();
       selfRegisterProfileCard.innerHTML = `
-        <span>Driver Profile Card</span>
-        <strong>${escapeHtml(name || "No driver loaded yet")}</strong>
-        <small>${escapeHtml(team || "Add a team name to make repeat check-ins faster.")}</small>
-        <small>${escapeHtml(chassis || "Add the chassis so event staff can confirm the right driver profile.")}</small>
+        <span>${teamMode ? "Team Profile Card" : "Driver Profile Card"}</span>
+        <strong>${escapeHtml(teamMode ? (team || "No team loaded yet") : (name || "No driver loaded yet"))}</strong>
+        <small>${escapeHtml(teamMode ? (name ? `Driver 1: ${name}` : "Add Driver 1 to start the team roster.") : (team || "Add a team name to make repeat check-ins faster."))}</small>
+        <small>${escapeHtml(teamMode ? (extraMembers.length ? `Linked drivers: ${extraMembers.join(", ")}` : "Add Driver 2 and an optional Driver 3 for team tandems.") : (chassis || "Add the chassis so event staff can confirm the right driver profile."))}</small>
         ${renderStatusChips([
           { label: `${savedProfiles.length} Saved`, tone: savedProfiles.length ? "ready" : "muted" },
-          { label: name ? "Ready To Check In" : "Needs Name", tone: name ? "live" : "warning" },
+          { label: teamMode ? (getNamedDraftDriverMembers(selfRegistrationDraft).length >= TEAM_TANDEM_MIN_DRIVERS && team ? "Ready To Check In" : "Needs Team") : (name ? "Ready To Check In" : "Needs Name"), tone: teamMode ? (getNamedDraftDriverMembers(selfRegistrationDraft).length >= TEAM_TANDEM_MIN_DRIVERS && team ? "live" : "warning") : (name ? "live" : "warning") },
         ])}
       `;
     }
@@ -17366,9 +17821,15 @@
       const latestArchive = archivedResults[0] || null;
       const nextEvent = activeEventMeta || sortEventsForDisplay().find((eventMeta) => getEventStatus(eventMeta) !== EVENT_STATUS_ARCHIVED) || null;
       const platformName = CLIENT_PLATFORM.productName || "RC Drift Sync";
+      const venueName = CLIENT_BRANDING.venueName || platformName;
 
+      if (landingHeroEyebrow) {
+        landingHeroEyebrow.textContent = nextEvent?.date
+          ? `${venueName} · ${formatEventDate(nextEvent.date)}`
+          : venueName;
+      }
       if (landingHeroTitle) {
-        landingHeroTitle.innerHTML = buildLandingWordmarkHtml();
+        landingHeroTitle.innerHTML = buildLandingHeroTitleHtml(nextEvent?.name || "Live Drift Event Hub");
       }
       if (landingHeroCopy) {
         const configuredLiveHeroCopy = String(
@@ -18278,57 +18739,81 @@
         return;
       }
 
-      pendingRegistrationForms.innerHTML = pendingEntries.map((entry) => {
-        const displayName = entry.name?.trim() ? escapeHtml(entry.name) : "New Driver";
-        const teamValue = escapeHtml(entry.teamName || "");
-        const chassisValue = escapeHtml(entry.chassis || "");
-        const paymentStatus = entry.paidAt ? "Paid" : "Waiting For Payment";
-        const submittedMeta = entry.selfRegisteredAt
-          ? `Pre-registered ${new Date(entry.selfRegisteredAt).toLocaleString()}`
+      const groupedEntries = [];
+      const seenGroupIds = new Set();
+      pendingEntries.forEach((entry) => {
+        const groupId = getPendingRegistrationGroupId(entry);
+        if (!groupId || seenGroupIds.has(groupId)) return;
+        seenGroupIds.add(groupId);
+        groupedEntries.push(getPendingRegistrationGroupEntries(entry.id));
+      });
+
+      pendingRegistrationForms.innerHTML = groupedEntries.map((entries) => {
+        const leader = getPendingRegistrationGroupLeader(entries);
+        if (!leader) return "";
+        const isTeamEntry = entries.length > 1;
+        const displayName = isTeamEntry
+          ? escapeHtml(leader.teamName || `${leader.name || "Team"} Team`)
+          : (leader.name?.trim() ? escapeHtml(leader.name) : "New Driver");
+        const teamValue = escapeHtml(leader.teamName || "");
+        const chassisValue = escapeHtml(leader.chassis || "");
+        const paymentStatus = leader.paidAt ? "Paid" : "Waiting For Payment";
+        const submittedMeta = leader.selfRegisteredAt
+          ? `Pre-registered ${new Date(leader.selfRegisteredAt).toLocaleString()}`
           : "Submitted from home pre-registration";
-        const checkedInMeta = entry.checkedInAt
-          ? ` | Checked in ${new Date(entry.checkedInAt).toLocaleString()}`
+        const checkedInMeta = leader.checkedInAt
+          ? ` | Checked in ${new Date(leader.checkedInAt).toLocaleString()}`
           : " | Venue check-in pending";
-        const paidMeta = entry.paidAt
-          ? ` | Paid ${new Date(entry.paidAt).toLocaleString()}`
+        const paidMeta = leader.paidAt
+          ? ` | Paid ${new Date(leader.paidAt).toLocaleString()}`
           : "";
-        const distanceMeta = Number.isFinite(entry.selfRegisteredDistanceMeters)
-          ? ` | Submitted ${escapeHtml(formatDistanceMeters(entry.selfRegisteredDistanceMeters))} from venue center`
+        const distanceMeta = Number.isFinite(leader.selfRegisteredDistanceMeters)
+          ? ` | Submitted ${escapeHtml(formatDistanceMeters(leader.selfRegisteredDistanceMeters))} from venue center`
           : "";
-        const checkedDistanceMeta = Number.isFinite(entry.checkedInDistanceMeters)
-          ? ` | Checked in ${escapeHtml(formatDistanceMeters(entry.checkedInDistanceMeters))} from venue center`
+        const checkedDistanceMeta = Number.isFinite(leader.checkedInDistanceMeters)
+          ? ` | Checked in ${escapeHtml(formatDistanceMeters(leader.checkedInDistanceMeters))} from venue center`
+          : "";
+        const membersMarkup = isTeamEntry
+          ? entries.map((entry) => `${escapeHtml(entry.name || "Unnamed Driver")}${entry.chassis ? ` | ${escapeHtml(entry.chassis)}` : ""}`).join("<br />")
           : "";
         return `
-          <article class="registration-card" data-pending-id="${entry.id}">
+          <article class="registration-card" data-pending-id="${leader.id}">
             <div class="registration-card-header">
               <div class="registration-card-title">
                 <strong>${displayName}</strong>
-                <small>${paymentStatus}</small>
+                <small>${isTeamEntry ? `${entries.length} Drivers | ${paymentStatus}` : paymentStatus}</small>
               </div>
               ${canEditRegistration
                 ? `<div class="role-admin-actions">
-                     <button class="micro-button" type="button" data-action="toggle-pending-paid">${entry.paidAt ? "Paid" : entry.checkedInAt ? "Mark Paid & Approve" : "Await Venue Check-In"}</button>
-                     <button class="micro-button button-accent" type="button" data-action="approve-pending-registration">${entry.checkedInAt ? "Approve To Roster" : "Needs Check-In"}</button>
-                     <button class="micro-button" type="button" data-action="remove-pending-registration">Remove</button>
+                     <button class="micro-button" type="button" data-action="toggle-pending-paid">${leader.paidAt ? "Paid" : leader.checkedInAt ? isTeamEntry ? "Mark Team Paid & Approve" : "Mark Paid & Approve" : "Await Venue Check-In"}</button>
+                     <button class="micro-button button-accent" type="button" data-action="approve-pending-registration">${leader.checkedInAt ? isTeamEntry ? "Approve Team To Roster" : "Approve To Roster" : "Needs Check-In"}</button>
+                     <button class="micro-button" type="button" data-action="remove-pending-registration">${isTeamEntry ? "Remove Team" : "Remove"}</button>
                    </div>`
                 : ""
               }
             </div>
             <div class="registration-form-grid">
               <div class="modal-field">
-                <span>Driver Name</span>
-                <strong>${displayName}</strong>
+                <span>${isTeamEntry ? "Registration Type" : "Driver Name"}</span>
+                <strong>${isTeamEntry ? "Team Tandem" : displayName}</strong>
               </div>
               <div class="modal-field">
                 <span>Team</span>
                 <strong>${teamValue || "Not provided"}</strong>
               </div>
               <div class="modal-field">
-                <span>Chassis</span>
-                <strong>${chassisValue || "Not provided"}</strong>
+                <span>${isTeamEntry ? "Drivers" : "Chassis"}</span>
+                <strong>${isTeamEntry ? `${entries.length} linked drivers` : (chassisValue || "Not provided")}</strong>
               </div>
+              ${isTeamEntry
+                ? `<div class="modal-field" style="grid-column: 1 / -1;">
+                     <span>Members</span>
+                     <strong>${membersMarkup}</strong>
+                   </div>`
+                : ""
+              }
             </div>
-            ${renderPendingStatusChips(entry)}
+            ${renderPendingStatusChips(leader)}
             <div class="registration-form-note">${submittedMeta}${checkedInMeta}${paidMeta}${distanceMeta}${checkedDistanceMeta}</div>
           </article>
         `;
@@ -18336,9 +18821,13 @@
     }
 
     function resetRegistrationDraft() {
-      registrationDraft = { name: "", teamName: "", chassis: "" };
+      registrationDraft = createEmptyRegistrationDraft();
       syncRegistrationDraftForm();
-      if (registrationDraftName) registrationDraftName.focus();
+      if (isTeamTandemMode()) {
+        registrationDraftTeam?.focus();
+      } else if (registrationDraftName) {
+        registrationDraftName.focus();
+      }
     }
 
     function focusManualRegistrationEntry() {
@@ -18349,13 +18838,51 @@
         entryForm.scrollIntoView({ behavior: "smooth", block: "start" });
       }
       requestAnimationFrame(() => {
-        registrationDraftName?.focus();
+        (isTeamTandemMode() ? registrationDraftTeam : registrationDraftName)?.focus();
       });
     }
 
     function submitRegistrationDraft() {
       if (!registrationCanEdit()) return false;
-      const name = registrationDraft.name?.trim() || "";
+      const nextDraft = normalizeRegistrationDraftState(registrationDraft);
+      if (isTeamTandemMode()) {
+        const validatedTeam = validateTeamTandemDraft(nextDraft, { prefix: "registration" });
+        if (!validatedTeam) return false;
+
+        for (const member of validatedTeam.members) {
+          const duplicate = findDuplicateDriverEntry(member.name);
+          if (duplicate) {
+            window.alert(`${member.name} already exists in the ${duplicate.type === "roster" ? "live roster" : "pending list"}.`);
+            if (member.order === 1) registrationDraftName?.focus();
+            if (member.order === 2) registrationDraftName2?.focus();
+            if (member.order === 3) registrationDraftName3?.focus();
+            return false;
+          }
+        }
+
+        const nextPosition = getNextSignUpPosition(appDrivers);
+        const teamRegistrationId = generateId();
+        const nextDrivers = validatedTeam.members.map((member, index) => {
+          const nextDriver = createEmptyDriver(nextPosition + index);
+          nextDriver.name = member.name;
+          nextDriver.teamName = validatedTeam.teamName;
+          nextDriver.chassis = member.chassis;
+          nextDriver.teamRegistrationId = teamRegistrationId;
+          nextDriver.teamMemberOrder = index + 1;
+          nextDriver.teamMemberCount = validatedTeam.members.length;
+          nextDriver.reg = nextPosition + index;
+          nextDriver.signUpPosition = nextPosition + index;
+          return nextDriver;
+        });
+
+        appDrivers = resequenceDrivers([...getRegisteredDrivers(appDrivers), ...nextDrivers], true);
+        publishState();
+        renderDriversTable();
+        resetRegistrationDraft();
+        return true;
+      }
+
+      const name = nextDraft.name?.trim() || "";
       if (!name) {
         if (registrationDraftName) registrationDraftName.focus();
         return false;
@@ -18369,8 +18896,8 @@
       const nextPosition = getNextSignUpPosition(appDrivers);
       const nextDriver = createEmptyDriver(nextPosition);
       nextDriver.name = name;
-      nextDriver.teamName = (registrationDraft.teamName || "").trim();
-      nextDriver.chassis = (registrationDraft.chassis || "").trim();
+      nextDriver.teamName = (nextDraft.teamName || "").trim();
+      nextDriver.chassis = (nextDraft.chassis || "").trim();
       nextDriver.reg = nextPosition;
       nextDriver.signUpPosition = nextPosition;
       appDrivers = resequenceDrivers([...getRegisteredDrivers(appDrivers), nextDriver], true);
@@ -18401,7 +18928,7 @@
     }
 
     function applyPastedVenueLocation() {
-      if (!adminCanEdit()) return false;
+      if (!websiteAdminCanEditVenueSettings()) return false;
       const rawValue = venueLocationPasteInput?.value || "";
       const parsed = parseVenueLocationInput(rawValue);
       if (!parsed) {
@@ -18411,7 +18938,7 @@
       if (venueLatitudeInput) venueLatitudeInput.value = formatCoordinateValue(parsed.latitude);
       if (venueLongitudeInput) venueLongitudeInput.value = formatCoordinateValue(parsed.longitude);
       syncVenueConfigForm({ preserveDraft: true });
-      window.alert("Venue coordinates were loaded into the form. Click Save Venue Settings to apply them to this event.");
+      window.alert("Venue coordinates were loaded into the event setup form. Save the event to apply them.");
       return true;
     }
 
@@ -18450,12 +18977,13 @@
           return;
         }
 
-        const pendingEntry = getPendingEntryForCheckIn();
-        if (pendingEntry && !pendingEntry.checkedInAt) {
+        const pendingGroup = getPendingEntryGroupForCheckIn();
+        const pendingEntry = getPendingRegistrationGroupLeader(pendingGroup);
+        if (pendingEntry && pendingGroup.some((entry) => !entry.checkedInAt)) {
           const pendingEntries = getPendingRegistrations();
           activeEventMeta = {
             ...activeEventMeta,
-            pendingRegistrations: pendingEntries.map((entry) => entry.id !== pendingEntry.id
+            pendingRegistrations: pendingEntries.map((entry) => !pendingGroup.some((member) => member.id === entry.id)
               ? entry
               : {
                   ...entry,
@@ -18466,7 +18994,7 @@
           eventDirectory[activeEventId] = cloneEventMeta(activeEventMeta);
           updateSelfRegistrationState(
             "ready",
-            `${pendingEntry.name} is now checked in at ${venueConfig.label || activeEventMeta?.name || "the venue"}. Event admin can approve this driver after payment.`,
+            `${pendingEntry.teamName || pendingEntry.name} is now checked in at ${venueConfig.label || activeEventMeta?.name || "the venue"}. Event admin can approve ${pendingGroup.length > 1 ? "this team" : "this driver"} after payment.`,
             true,
             distanceMeters,
           );
@@ -18475,7 +19003,7 @@
           updateSelfRegistrationState(
             "ready",
             pendingEntry?.checkedInAt
-              ? `${pendingEntry.name} is already checked in for ${venueConfig.label || activeEventMeta?.name || "this event"}.`
+              ? `${pendingEntry.teamName || pendingEntry.name} is already checked in for ${venueConfig.label || activeEventMeta?.name || "this event"}.`
               : `Location confirmed for ${venueConfig.label || activeEventMeta?.name || "this event"}. You can pre-register now and this submission will be tagged as checked in.`,
             true,
             distanceMeters,
@@ -18499,13 +19027,128 @@
 
     async function submitSelfRegistration() {
       if (!hasValidVenueConfig() || !activeEventMeta) return false;
-      const name = (selfRegistrationDraft.name || "").trim();
+      const nextDraft = normalizeRegistrationDraftState(selfRegistrationDraft);
+      const teamMode = isTeamTandemMode();
+      const name = (nextDraft.name || "").trim();
+      const deviceToken = getSelfRegisterDeviceId();
+      const existingGroupEntries = getPendingEntryGroupForCheckIn(nextDraft, deviceToken);
+      const existingEntry = getPendingRegistrationGroupLeader(existingGroupEntries);
+      const excludedPendingIds = existingGroupEntries.map((entry) => entry.id);
+
+      if (teamMode) {
+        const validatedTeam = validateTeamTandemDraft(nextDraft, { prefix: "self" });
+        if (!validatedTeam) return false;
+
+        const existingDeviceEntries = findPendingRegistrationByDeviceToken(deviceToken);
+        if (existingDeviceEntries.length && !existingGroupEntries.length) {
+          updateSelfRegistrationState(
+            "error",
+            "This device already has a pending pre-registration for another team. Please update that team entry or ask event staff for help.",
+            false,
+          );
+          syncSelfRegisterForm();
+          return false;
+        }
+
+        const lastSubmitMeta = readLastSelfRegisterSubmitMeta();
+        const lastSubmitMs = new Date(lastSubmitMeta?.submittedAt || 0).getTime();
+        const submissionKey = getDraftSubmissionKey(nextDraft);
+        if (
+          Number.isFinite(lastSubmitMs)
+          && Date.now() - lastSubmitMs < 60000
+          && normalizeDriverName(lastSubmitMeta?.name || "") !== normalizeDriverName(submissionKey)
+        ) {
+          updateSelfRegistrationState(
+            "error",
+            "Please wait about one minute before submitting a different team from this device. This helps prevent spam check-ins.",
+            false,
+          );
+          syncSelfRegisterForm();
+          return false;
+        }
+
+        for (const member of validatedTeam.members) {
+          const duplicate = findDuplicateDriverEntry(member.name, { excludePendingIds: excludedPendingIds });
+          if (duplicate) {
+            updateSelfRegistrationState(
+              "error",
+              duplicate.type === "roster"
+                ? `${member.name} is already in the live roster. Please check with event staff before registering again.`
+                : `${member.name} is already in the pre-registration list. Use Verify Venue Check-In when your team arrives or see event staff.`,
+              false,
+            );
+            syncSelfRegisterForm();
+            return false;
+          }
+        }
+
+        const closeReason = getSelfRegistrationCloseReason();
+        if (closeReason) {
+          updateSelfRegistrationState(
+            "error",
+            closeReason === "scheduled-close"
+              ? "Pre-registration is closed because the scheduled close time has passed."
+              : "Pre-registration is closed because qualifying has already started.",
+            false,
+          );
+          syncSelfRegisterForm();
+          return false;
+        }
+
+        const submittedAt = new Date().toISOString();
+        const teamRegistrationId = existingEntry?.teamRegistrationId || generateId();
+        const nextPendingEntries = validatedTeam.members.map((member, index) => {
+          const existingMember = existingGroupEntries.find((entry) => normalizeDriverName(entry.name) === normalizeDriverName(member.name))
+            || existingGroupEntries[index]
+            || null;
+          return {
+            id: existingMember?.id || generateId(),
+            name: member.name,
+            teamName: validatedTeam.teamName,
+            chassis: member.chassis,
+            teamRegistrationId,
+            teamMemberOrder: index + 1,
+            teamMemberCount: validatedTeam.members.length,
+            deviceToken,
+            selfRegisteredAt: existingMember?.selfRegisteredAt || submittedAt,
+            checkedInAt: selfRegistrationState.unlocked ? (existingMember?.checkedInAt || submittedAt) : (existingMember?.checkedInAt || null),
+            paidAt: existingMember?.paidAt || null,
+            selfRegisteredDistanceMeters: selfRegistrationState.lastDistanceMeters,
+            checkedInDistanceMeters: selfRegistrationState.unlocked
+              ? (selfRegistrationState.lastDistanceMeters ?? existingMember?.checkedInDistanceMeters ?? null)
+              : (existingMember?.checkedInDistanceMeters ?? null),
+          };
+        });
+
+        activeEventMeta = {
+          ...activeEventMeta,
+          pendingRegistrations: [
+            ...getPendingRegistrations().filter((entry) => !excludedPendingIds.includes(entry.id)),
+            ...nextPendingEntries,
+          ],
+        };
+        eventDirectory[activeEventId] = cloneEventMeta(activeEventMeta);
+        saveCurrentSelfRegisterProfile();
+        selfRegistrationDraft = createEmptyRegistrationDraft();
+        writeLastSelfRegisterSubmitMeta({ submittedAt, name: submissionKey, deviceToken });
+        updateSelfRegistrationState(
+          selfRegistrationState.unlocked ? "ready" : "locked",
+          selfRegistrationState.unlocked
+            ? `${validatedTeam.teamName} is pre-registered and checked in. Event admin can add this team to the live roster after payment.`
+            : `${validatedTeam.teamName} is pre-registered. When the team arrives, tap Verify Venue Check-In to confirm they are on site.`,
+          false,
+          selfRegistrationState.lastDistanceMeters,
+        );
+        await publishStateImmediately();
+        renderDriversTable();
+        syncSelfRegisterForm();
+        return true;
+      }
+
       if (!name) {
         if (selfRegisterName) selfRegisterName.focus();
         return false;
       }
-      const deviceToken = getSelfRegisterDeviceId();
-      const existingEntry = getPendingEntryForCheckIn(name, deviceToken);
       const duplicate = findDuplicateDriverEntry(name, { excludePendingId: existingEntry?.id || null });
       if (duplicate) {
         updateSelfRegistrationState(
@@ -18559,8 +19202,8 @@
       const nextPendingEntry = {
         id: existingEntry?.id || generateId(),
         name,
-        teamName: (selfRegistrationDraft.teamName || "").trim(),
-        chassis: (selfRegistrationDraft.chassis || "").trim(),
+        teamName: (nextDraft.teamName || "").trim(),
+        chassis: (nextDraft.chassis || "").trim(),
         deviceToken,
         selfRegisteredAt: existingEntry?.selfRegisteredAt || submittedAt,
         checkedInAt: selfRegistrationState.unlocked ? (existingEntry?.checkedInAt || submittedAt) : (existingEntry?.checkedInAt || null),
@@ -18578,7 +19221,7 @@
       };
       eventDirectory[activeEventId] = cloneEventMeta(activeEventMeta);
       saveCurrentSelfRegisterProfile();
-      selfRegistrationDraft = { name: "", teamName: "", chassis: "" };
+      selfRegistrationDraft = createEmptyRegistrationDraft();
       writeLastSelfRegisterSubmitMeta({ submittedAt, name, deviceToken });
       updateSelfRegistrationState(
         selfRegistrationState.unlocked ? "ready" : "locked",
@@ -18597,41 +19240,52 @@
     async function approvePendingRegistration(entryId) {
       if (!registrationCanEdit() || !activeEventMeta) return false;
       const pendingEntries = getPendingRegistrations();
-      const nextEntry = pendingEntries.find((entry) => entry.id === entryId);
-      if (!nextEntry) return false;
-      if (!nextEntry.checkedInAt) {
-        window.alert(`${nextEntry.name} is only pre-registered right now. Have them verify venue check-in on their phone before approving them to the roster.`);
+      const entryGroup = getPendingRegistrationGroupEntries(entryId);
+      const nextEntry = getPendingRegistrationGroupLeader(entryGroup);
+      if (!nextEntry || !entryGroup.length) return false;
+      if (entryGroup.some((entry) => !entry.checkedInAt)) {
+        window.alert(`${nextEntry.teamName || nextEntry.name} is only pre-registered right now. Have them verify venue check-in on their phone before approving them to the roster.`);
         return false;
       }
-      const duplicate = findDuplicateDriverEntry(nextEntry.name, { excludePendingId: entryId });
-      if (duplicate) {
-        window.alert(`${nextEntry.name} already exists in the ${duplicate.type === "roster" ? "live roster" : "pending list"}. Remove or rename the duplicate before approving this driver.`);
-        return false;
+
+      for (const entry of entryGroup) {
+        const duplicate = findDuplicateDriverEntry(entry.name, { excludePendingIds: entryGroup.map((member) => member.id) });
+        if (duplicate) {
+          window.alert(`${entry.name} already exists in the ${duplicate.type === "roster" ? "live roster" : "pending list"}. Remove or rename the duplicate before approving this driver.`);
+          return false;
+        }
       }
 
       const nextPosition = getNextSignUpPosition(appDrivers);
-      const nextDriver = createEmptyDriver(nextPosition);
-      nextDriver.name = nextEntry.name;
-      nextDriver.teamName = nextEntry.teamName || "";
-      nextDriver.chassis = nextEntry.chassis || "";
-      nextDriver.reg = nextPosition;
-      nextDriver.signUpPosition = nextPosition;
-      nextDriver.selfRegisteredAt = nextEntry.selfRegisteredAt;
-      nextDriver.selfRegisteredDistanceMeters = nextEntry.selfRegisteredDistanceMeters;
-      nextDriver.checkedInAt = nextEntry.checkedInAt;
-      nextDriver.checkedInDistanceMeters = nextEntry.checkedInDistanceMeters;
-      nextDriver.paidAt = nextEntry.paidAt || null;
-      nextDriver.approvedToRosterAt = new Date().toISOString();
+      const approvedAt = new Date().toISOString();
+      const nextDrivers = entryGroup.map((entry, index) => {
+        const nextDriver = createEmptyDriver(nextPosition + index);
+        nextDriver.name = entry.name;
+        nextDriver.teamName = entry.teamName || "";
+        nextDriver.chassis = entry.chassis || "";
+        nextDriver.teamRegistrationId = entry.teamRegistrationId || "";
+        nextDriver.teamMemberOrder = entry.teamMemberOrder || (index + 1);
+        nextDriver.teamMemberCount = entry.teamMemberCount || entryGroup.length;
+        nextDriver.reg = nextPosition + index;
+        nextDriver.signUpPosition = nextPosition + index;
+        nextDriver.selfRegisteredAt = entry.selfRegisteredAt;
+        nextDriver.selfRegisteredDistanceMeters = entry.selfRegisteredDistanceMeters;
+        nextDriver.checkedInAt = entry.checkedInAt;
+        nextDriver.checkedInDistanceMeters = entry.checkedInDistanceMeters;
+        nextDriver.paidAt = entry.paidAt || null;
+        nextDriver.approvedToRosterAt = approvedAt;
+        return nextDriver;
+      });
 
-      appDrivers = resequenceDrivers([...getRegisteredDrivers(appDrivers), nextDriver], true);
+      appDrivers = resequenceDrivers([...getRegisteredDrivers(appDrivers), ...nextDrivers], true);
       activeEventMeta = {
         ...activeEventMeta,
-        pendingRegistrations: pendingEntries.filter((entry) => entry.id !== entryId),
+        pendingRegistrations: pendingEntries.filter((entry) => !entryGroup.some((member) => member.id === entry.id)),
         latestApprovalToast: {
-          id: `${nextDriver.id}:${nextDriver.approvedToRosterAt}`,
-          name: nextDriver.name,
-          reg: nextDriver.reg,
-          approvedAt: nextDriver.approvedToRosterAt,
+          id: `${nextDrivers[0].id}:${approvedAt}`,
+          name: entryGroup.length > 1 ? `${nextEntry.teamName || nextEntry.name} (${entryGroup.length} drivers)` : nextDrivers[0].name,
+          reg: nextDrivers[0].reg,
+          approvedAt,
         },
       };
       eventDirectory[activeEventId] = cloneEventMeta(activeEventMeta);
@@ -18643,42 +19297,52 @@
     async function togglePendingRegistrationPaid(entryId) {
       if (!registrationCanEdit() || !activeEventMeta) return false;
       const pendingEntries = getPendingRegistrations();
-      const nextEntry = pendingEntries.find((entry) => entry.id === entryId);
-      if (!nextEntry) return false;
+      const entryGroup = getPendingRegistrationGroupEntries(entryId);
+      const nextEntry = getPendingRegistrationGroupLeader(entryGroup);
+      if (!nextEntry || !entryGroup.length) return false;
       if (nextEntry.paidAt) return true;
-      if (!nextEntry.checkedInAt) {
-        window.alert(`${nextEntry.name} has not completed venue check-in yet. Keep them in pre-registration until they verify on-site.`);
+      if (entryGroup.some((entry) => !entry.checkedInAt)) {
+        window.alert(`${nextEntry.teamName || nextEntry.name} has not completed venue check-in yet. Keep them in pre-registration until they verify on-site.`);
         return false;
       }
-      const duplicate = findDuplicateDriverEntry(nextEntry.name, { excludePendingId: entryId });
-      if (duplicate) {
-        window.alert(`${nextEntry.name} already exists in the ${duplicate.type === "roster" ? "live roster" : "pending list"}. Remove or rename the duplicate before approving this driver.`);
-        return false;
+
+      for (const entry of entryGroup) {
+        const duplicate = findDuplicateDriverEntry(entry.name, { excludePendingIds: entryGroup.map((member) => member.id) });
+        if (duplicate) {
+          window.alert(`${entry.name} already exists in the ${duplicate.type === "roster" ? "live roster" : "pending list"}. Remove or rename the duplicate before approving this driver.`);
+          return false;
+        }
       }
 
       const paidAt = new Date().toISOString();
       const nextPosition = getNextSignUpPosition(appDrivers);
-      const nextDriver = createEmptyDriver(nextPosition);
-      nextDriver.name = nextEntry.name;
-      nextDriver.teamName = nextEntry.teamName || "";
-      nextDriver.chassis = nextEntry.chassis || "";
-      nextDriver.reg = nextPosition;
-      nextDriver.signUpPosition = nextPosition;
-      nextDriver.selfRegisteredAt = nextEntry.selfRegisteredAt;
-      nextDriver.selfRegisteredDistanceMeters = nextEntry.selfRegisteredDistanceMeters;
-      nextDriver.checkedInAt = nextEntry.checkedInAt;
-      nextDriver.checkedInDistanceMeters = nextEntry.checkedInDistanceMeters;
-      nextDriver.paidAt = paidAt;
-      nextDriver.approvedToRosterAt = paidAt;
+      const nextDrivers = entryGroup.map((entry, index) => {
+        const nextDriver = createEmptyDriver(nextPosition + index);
+        nextDriver.name = entry.name;
+        nextDriver.teamName = entry.teamName || "";
+        nextDriver.chassis = entry.chassis || "";
+        nextDriver.teamRegistrationId = entry.teamRegistrationId || "";
+        nextDriver.teamMemberOrder = entry.teamMemberOrder || (index + 1);
+        nextDriver.teamMemberCount = entry.teamMemberCount || entryGroup.length;
+        nextDriver.reg = nextPosition + index;
+        nextDriver.signUpPosition = nextPosition + index;
+        nextDriver.selfRegisteredAt = entry.selfRegisteredAt;
+        nextDriver.selfRegisteredDistanceMeters = entry.selfRegisteredDistanceMeters;
+        nextDriver.checkedInAt = entry.checkedInAt;
+        nextDriver.checkedInDistanceMeters = entry.checkedInDistanceMeters;
+        nextDriver.paidAt = paidAt;
+        nextDriver.approvedToRosterAt = paidAt;
+        return nextDriver;
+      });
 
-      appDrivers = resequenceDrivers([...getRegisteredDrivers(appDrivers), nextDriver], true);
+      appDrivers = resequenceDrivers([...getRegisteredDrivers(appDrivers), ...nextDrivers], true);
       activeEventMeta = {
         ...activeEventMeta,
-        pendingRegistrations: pendingEntries.filter((entry) => entry.id !== entryId),
+        pendingRegistrations: pendingEntries.filter((entry) => !entryGroup.some((member) => member.id === entry.id)),
         latestApprovalToast: {
-          id: `${nextDriver.id}:${paidAt}`,
-          name: nextDriver.name,
-          reg: nextDriver.reg,
+          id: `${nextDrivers[0].id}:${paidAt}`,
+          name: entryGroup.length > 1 ? `${nextEntry.teamName || nextEntry.name} (${entryGroup.length} drivers)` : nextDrivers[0].name,
+          reg: nextDrivers[0].reg,
           approvedAt: paidAt,
         },
       };
@@ -18691,10 +19355,11 @@
     async function removePendingRegistration(entryId) {
       if (!registrationCanEdit() || !activeEventMeta) return false;
       const pendingEntries = getPendingRegistrations();
-      if (!pendingEntries.some((entry) => entry.id === entryId)) return false;
+      const entryGroup = getPendingRegistrationGroupEntries(entryId);
+      if (!entryGroup.length) return false;
       activeEventMeta = {
         ...activeEventMeta,
-        pendingRegistrations: pendingEntries.filter((entry) => entry.id !== entryId),
+        pendingRegistrations: pendingEntries.filter((entry) => !entryGroup.some((member) => member.id === entry.id)),
       };
       eventDirectory[activeEventId] = cloneEventMeta(activeEventMeta);
       await publishStateImmediately();
@@ -19076,13 +19741,14 @@
       }
       if (createEventModalCopy) {
         createEventModalCopy.textContent = isEditMode
-          ? "Update the current event name, date, judging style, judge count, and judge display names without creating a new event."
-          : "Create a fresh event and keep it saved separately from past competitions. Event admin and judge passwords are set later inside the website admin panel.";
+          ? "Update the current event name, date, judging style, competition mode, judge count, judge display names, and venue check-in settings without creating a new event."
+          : "Create a fresh event and set its venue check-in settings up front so public registration is ready as soon as the event goes live.";
       }
       eventNameInput.value = eventMeta?.name || "";
       eventDateInput.value = eventMeta?.date || new Date().toISOString().slice(0, 10);
       judgeCountInput.value = "3";
       if (judgingModeInput) judgingModeInput.value = normalizeJudgingMode(eventMeta?.judgingMode);
+      if (competitionModeInput) competitionModeInput.value = normalizeCompetitionMode(eventMeta?.competitionMode);
       adminInviteInput.value = "";
       adminInviteInput.disabled = true;
       judge1NameInput.value = eventMeta?.roleNames?.j1 || "Judge 1";
@@ -19095,9 +19761,22 @@
       judge3InviteInput.value = "";
       judge3InviteInput.disabled = true;
       judgeCountInput.value = String(normalizeJudgeCount(eventMeta?.judgeCount || 3));
+      clearVenueProfileSelection();
+      if (venueLocationPasteInput) venueLocationPasteInput.value = "";
+      applyVenueConfigToForm(
+        createDefaultVenueConfig(
+          eventMeta
+            ? getVenueConfig(eventMeta)
+            : {
+                enabled: false,
+                label: CLIENT_BRANDING.venueLabelPlaceholder || CLIENT_BRANDING.venueName || "",
+              }
+        )
+      );
       createEventError.style.display = "none";
       createEventSubmitBtn.textContent = isEditMode ? "Save Event Changes" : "Create Event";
       syncCreateEventJudgeFields();
+      syncVenueConfigForm({ preserveDraft: true });
     }
 
     function showCreateEventModal() {
@@ -19116,9 +19795,10 @@
       createEventModalMode = "create";
       if (createEventModalTitle) createEventModalTitle.textContent = "Create Event";
       if (createEventModalCopy) {
-        createEventModalCopy.textContent = "Create a fresh event and keep it saved separately from past competitions. Event admin and judge passwords are set later inside the website admin panel.";
+        createEventModalCopy.textContent = "Create a fresh event and set its venue check-in settings up front so public registration is ready as soon as the event goes live.";
       }
       if (judgingModeInput) judgingModeInput.value = JUDGING_MODE_AVERAGE;
+      if (competitionModeInput) competitionModeInput.value = COMPETITION_MODE_SOLO;
       createEventSubmitBtn.textContent = "Create Event";
       createEventError.style.display = "none";
     }
@@ -19542,7 +20222,9 @@
       const name = eventNameInput.value.trim();
       const date = eventDateInput.value;
       const judgingMode = normalizeJudgingMode(judgingModeInput?.value);
+      const competitionMode = normalizeCompetitionMode(competitionModeInput?.value);
       const judgeCount = normalizeJudgeCountForMode(judgeCountInput.value, judgingMode);
+      const venueConfig = collectVenueConfigFromForm();
       const invites = { admin: "", j1: "", j2: "", j3: "" };
       const roleNames = {
         j1: judge1NameInput.value.trim(),
@@ -19552,6 +20234,12 @@
 
       if (!name || !date) {
         createEventError.textContent = "Complete the event name and date before creating the competition.";
+        createEventError.style.display = "block";
+        return;
+      }
+
+      if (venueConfig.enabled && !hasValidVenueConfig({ venueConfig })) {
+        createEventError.textContent = "Enable self-registration only after adding valid venue coordinates and a positive radius.";
         createEventError.style.display = "block";
         return;
       }
@@ -19574,6 +20262,8 @@
           date,
           judgeCount,
           judgingMode,
+          competitionMode,
+          venueConfig,
           roleNames: nextRoleNames,
           updatedAt: new Date().toISOString(),
         };
@@ -19585,6 +20275,7 @@
         });
 
         await publishStateImmediately();
+        syncScheduledActiveEventSelection({ publishSelection: Boolean(isWebsiteAdmin && !localEventPreviewMode) });
         renderEventDirectory();
         renderRoleAdminPanel();
         renderDriversTable();
@@ -19596,7 +20287,7 @@
         return;
       }
 
-      const eventMeta = await createEventRecord({ name, date, invites, roleNames, judgeCount, judgingMode });
+      const eventMeta = await createEventRecord({ name, date, invites, roleNames, judgeCount, judgingMode, competitionMode, venueConfig });
       setDeletedEventId(eventMeta.id, false);
       eventDirectory[eventMeta.id] = eventMeta;
       activeEventId = eventMeta.id;
@@ -19721,6 +20412,11 @@
     window.addEventListener("pageshow", () => {
       syncForcedHostContext();
       globalRoleSelect.value = currentRole;
+      syncScheduledActiveEventSelection({ publishSelection: Boolean(isWebsiteAdmin && !localEventPreviewMode) });
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) return;
+      syncScheduledActiveEventSelection({ publishSelection: Boolean(isWebsiteAdmin && !localEventPreviewMode) });
     });
     window.addEventListener("hashchange", () => {
       applyRouteFromLocation();
@@ -21104,6 +21800,14 @@
         registrationDraft.teamName = e.target.value;
       } else if (e.target === registrationDraftChassis) {
         registrationDraft.chassis = e.target.value;
+      } else if (e.target === registrationDraftName2) {
+        registrationDraft.teammate2Name = e.target.value;
+      } else if (e.target === registrationDraftChassis2) {
+        registrationDraft.teammate2Chassis = e.target.value;
+      } else if (e.target === registrationDraftName3) {
+        registrationDraft.teammate3Name = e.target.value;
+      } else if (e.target === registrationDraftChassis3) {
+        registrationDraft.teammate3Chassis = e.target.value;
       }
     });
 
@@ -21165,6 +21869,14 @@
         selfRegistrationDraft.teamName = e.target.value;
       } else if (e.target === selfRegisterChassis) {
         selfRegistrationDraft.chassis = e.target.value;
+      } else if (e.target === selfRegisterName2) {
+        selfRegistrationDraft.teammate2Name = e.target.value;
+      } else if (e.target === selfRegisterChassis2) {
+        selfRegistrationDraft.teammate2Chassis = e.target.value;
+      } else if (e.target === selfRegisterName3) {
+        selfRegistrationDraft.teammate3Name = e.target.value;
+      } else if (e.target === selfRegisterChassis3) {
+        selfRegistrationDraft.teammate3Chassis = e.target.value;
       }
       persistSelfRegisterProfile();
       syncSelfRegisterForm();
@@ -21177,20 +21889,20 @@
     useSavedSelfRegisterProfileBtn?.addEventListener("click", () => {
       const selectedId = selfRegisterSavedProfileSelect?.value || "";
       if (selectedId && applySavedSelfRegisterProfile(selectedId)) return;
-      selfRegistrationDraft = loadSavedSelfRegisterProfile();
+      selfRegistrationDraft = normalizeRegistrationDraftState(loadSavedSelfRegisterProfile());
       syncSelfRegisterForm();
     });
 
     saveCurrentSelfRegisterProfileBtn?.addEventListener("click", () => {
       if (saveCurrentSelfRegisterProfile()) {
-        window.alert("Driver profile saved on this device.");
+        window.alert("Registration profile saved on this device.");
       }
       syncSelfRegisterForm();
     });
 
     clearSavedSelfRegisterProfileBtn?.addEventListener("click", () => {
       clearSavedSelfRegisterProfile();
-      selfRegistrationDraft = { name: "", teamName: "", chassis: "" };
+      selfRegistrationDraft = createEmptyRegistrationDraft();
       syncSelfRegisterForm();
     });
 
@@ -22530,6 +23242,7 @@
       syncForcedHostContext();
       initializeTheme();
       await initLocalState();
+      startAutoEventSwitchWatcher();
       if (STANDALONE_DEMO_MODE) {
         activateStandaloneDemoWindow();
       }
@@ -22549,3 +23262,4 @@
   </script>
 </body>
 </html>
+

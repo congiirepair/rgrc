@@ -15,9 +15,9 @@ window.RC_DRIFT_CLIENT_CONFIG = {
       "invertLight": false,
       "invertDark": true
     },
-    "logoAlt": "RC Drift Sync logo",
-    "backgroundImage": "./assets/user/backgroundimage-chatgpt-image-apr-16-2026-06-39-03-am-1776346758423.png",
-    "homeHeroImage": "./assets/user/homeheroimage-rgrcfront-1776347558157.png",
+    "logoAlt": "Rolling Garage RC logo",
+    "backgroundImage": "./assets/rgrcfront.png",
+    "homeHeroImage": "./assets/rgrcfront.png",
     "shopUrl": "https://rollinggaragerc.com/",
     "shopLabel": "Shop at RollingGarage RC",
     "pdfHeaderTitle": "RGRC",
@@ -45,38 +45,38 @@ window.RC_DRIFT_CLIENT_CONFIG = {
   },
   "theme": {
     "light": {
-      "accent": "#000000",
-      "accentDark": "#ffffff",
-      "buttonAccent": "#000000",
-      "buttonAccentDark": "#4b4848",
-      "accentCyan": "#000000",
-      "accentGreen": "#000000",
-      "accentGreenDark": "#000000",
-      "panelHighlight": "#000000",
-      "accentWarm": "#ff0000",
-      "wordmarkColor": "#1b2127"
+      "accent": "#2c241d",
+      "accentDark": "#8a7358",
+      "buttonAccent": "#2b241d",
+      "buttonAccentDark": "#7a634b",
+      "accentCyan": "#6e8792",
+      "accentGreen": "#6f7d62",
+      "accentGreenDark": "#4d5847",
+      "panelHighlight": "#b48b5a",
+      "accentWarm": "#d3a36d",
+      "wordmarkColor": "#17130f"
     },
     "dark": {
-      "accent": "#000000",
-      "accentDark": "#ffffff",
-      "buttonAccent": "#000000",
-      "buttonAccentDark": "#404040",
-      "accentCyan": "#000000",
-      "accentGreen": "#ffffff",
-      "accentGreenDark": "#000000",
-      "panelHighlight": "#000000",
-      "accentWarm": "#fedaa4",
-      "wordmarkColor": "#f7f7f7"
+      "accent": "#d0a06b",
+      "accentDark": "#6f553c",
+      "buttonAccent": "#b88a59",
+      "buttonAccentDark": "#5c4735",
+      "accentCyan": "#87a6b2",
+      "accentGreen": "#8fa083",
+      "accentGreenDark": "#5b684f",
+      "panelHighlight": "#d3a36d",
+      "accentWarm": "#f3d3aa",
+      "wordmarkColor": "#f3e8db"
     }
   },
   "layout": {
     "centerAllText": true
   },
   "landing": {
-    "whySectionKicker": "Why RC Drift Sync",
-    "heroCopy": "Track {eventName}, jump into live standings and competition, and keep drivers, judges, and spectators synced from one live event hub.",
-    "emptyHeroCopy": "Jump into registration, standings, results, and competition from one cleaner front door.",
-    "whySectionCopy": "RC Drift Sync keeps registration, live qualifying, bracket control, and results in one place so tracks can run smoother event days without juggling separate tools.",
+    "whySectionKicker": "Built For Event Day",
+    "heroCopy": "Follow {eventName} live with qualifying, competition brackets, and results from one Rolling Garage RC event hub.",
+    "emptyHeroCopy": "Check in, follow standings, and keep Rolling Garage RC event days moving from one live event home.",
+    "whySectionCopy": "Rolling Garage RC uses RC Drift Sync to keep check-in, live scoring, bracket control, and results connected in one smoother event-day flow.",
     "benefits": [
       [
         "3-Judge Cloud Sync",
