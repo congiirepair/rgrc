@@ -16095,6 +16095,10 @@
       return views.find((viewName) => document.getElementById(`view-${viewName}`)?.classList.contains("is-active")) || "qualifying";
     }
 
+    function shouldKeepWebsiteAdminSelectionLocal() {
+      return Boolean(isWebsiteAdmin && getActiveViewName() === "website-admin");
+    }
+
     function shouldUseJudgeBracketView(role = currentRole, flow = qualifyingFlow, drivers = appDrivers, state = tournamentState, eventMeta = activeEventMeta) {
       if (!role?.startsWith("j")) return false;
       if (isJudgeAccessLocked(eventMeta)) return false;
@@ -16941,6 +16945,7 @@
 
     function syncScheduledActiveEventSelection(options = {}) {
       if (localEventPreviewMode && !options.allowDuringPreview) return false;
+      if (shouldKeepWebsiteAdminSelectionLocal() && !options.allowDuringWebsiteAdmin) return false;
       const referenceDate = options.referenceDate instanceof Date ? options.referenceDate : new Date();
       const nextEventId = resolveScheduledActiveEventId(options.currentEventId || activeEventId, referenceDate);
       if (!nextEventId) return false;
@@ -20940,7 +20945,7 @@
     }
 
     eventSelect.addEventListener("change", () => {
-      openEventById(eventSelect.value);
+      openEventById(eventSelect.value, null, !shouldKeepWebsiteAdminSelectionLocal());
     });
 
     const handleEventArchiveClick = (e) => {
@@ -20951,7 +20956,7 @@
 
       if (openButton) {
         eventSelect.value = openButton.dataset.eventId;
-        openEventById(openButton.dataset.eventId);
+        openEventById(openButton.dataset.eventId, null, !shouldKeepWebsiteAdminSelectionLocal());
         return;
       }
 
